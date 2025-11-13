@@ -84,8 +84,6 @@ end
 
 ---Generates a template from a string containing variables of the form $VAR, and a table
 ---of corresponding replacement variables.
----
----SOURCE: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
 ---@param str string template string
 ---@param table table key value pairs to replace in the string
 ---@return string
