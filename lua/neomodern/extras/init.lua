@@ -1,31 +1,30 @@
 local M = {}
+local URL = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
 
----@alias Extra {ext:string, url:string, label:string}
+---@alias Extra {name: string, ext:string, url:string, label:string}
 
--- map of plugin name to plugin extension
---- @type table<string, Extra>
+--- @type table<Extra>
 M.extras = {
     -- stylua: ignore start
-    alacritty = {ext = ".toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty"},
-    fish = {ext = ".fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish"},
-    fish_themes = {ext = ".theme", url = "https://fishshell.com/docs/current/interactive.html#syntax-highlighting", label = "Fish Themes"},
-    foot = {ext = ".ini", url = "https://codeberg.org/dnkl/foot", label = "Foot"},
-    fzf = { ext = ".zsh", url = "https://github.com/junegunn/fzf", label = "Fzf"},
-    ghostty = { ext = "", url = "https://github.com/ghostty-org/ghostty", label = "Ghostty"},
-    hyprland = { ext = ".conf", url = "https://github.com/hyprwm/Hyprland", label = "Hyprland" },
-    kitty = {ext = ".conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty"},
-    nushell = { ext = ".nu", url = "https://github.com/nushell/nushell", label = "Nushell" },
-    waybar = { ext = ".css", url = "https://github.com/Alexays/Waybar", label = "Waybar" },
-    wezterm = {ext = ".toml", url = "https://wezfurlong.org/wezterm/config/files.html", label = "WezTerm"},
-    windows_terminal = {ext = ".json", url = "https://aka.ms/terminal-documentation", label = "Windows Terminal"},
-    yazi = { ext = ".toml", url = "https://github.com/sxyazi/yazi", label = "Yazi"},
+    { name = "alacritty", ext = ".toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty"},
+    { name = "fish", ext = ".fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish"},
+    { name = "fish_themes", ext = ".theme", url = "https://fishshell.com/docs/current/interactive.html#syntax-highlighting", label = "Fish Themes"},
+    { name = "foot", ext = ".ini", url = "https://codeberg.org/dnkl/foot", label = "Foot"},
+    { name = "fzf",  ext = ".zsh", url = "https://github.com/junegunn/fzf", label = "Fzf"},
+    { name = "ghostty",  ext = "", url = "https://github.com/ghostty-org/ghostty", label = "Ghostty"},
+    { name = "hyprland",  ext = ".conf", url = "https://github.com/hyprwm/Hyprland", label = "Hyprland" },
+    { name = "kitty", ext = ".conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty"},
+    { name = "nushell",  ext = ".nu", url = "https://github.com/nushell/nushell", label = "Nushell" },
+    { name = "waybar",  ext = ".css", url = "https://github.com/Alexays/Waybar", label = "Waybar" },
+    { name = "wezterm", ext = ".toml", url = "https://wezfurlong.org/wezterm/config/files.html", label = "WezTerm"},
+    { name = "windows_terminal", ext = ".json", url = "https://aka.ms/terminal-documentation", label = "Windows Terminal"},
+    { name = "yazi",  ext = ".toml", url = "https://github.com/sxyazi/yazi", label = "Yazi"},
     -- stylua: ignore end
 }
 
 ---@param contents string file contents (extra theme)
 ---@param fname string filename to save extra
 local function write(contents, fname)
-    print("[write] extra/" .. fname)
     vim.fn.mkdir(vim.fs.dirname("extras/" .. fname), "p")
     local file = io.open("extras/" .. fname, "w")
     if file then
@@ -34,25 +33,19 @@ local function write(contents, fname)
     end
 end
 
----Generates themes found in the Extras folder. Templates are stored in `neomodern/extras/`.
-function M.setup()
-    local neomodern = require("neomodern")
+function M.generate()
     local themes = require("neomodern.palette").themes
-
-    for extra, info in pairs(M.extras) do
-        package.loaded["neomodern.extras." .. extra] = nil
-        local template = require("neomodern.extras." .. extra)
+    for _, extra in ipairs(M.extras) do
+        package.loaded["neomodern.extras." .. extra.name] = nil
+        local template = require("neomodern.extras.templates" .. extra.name)
         for _, theme in pairs(themes) do
-            neomodern.load(theme)
-            local palette = require("neomodern.terminal").colors(true)
-            local fname = extra .. "/" .. theme .. info.ext
-            local url = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
-                .. fname
+            local palette = require("neomodern.palette").get(theme, "dark")
+            local fname = extra.name .. "/" .. theme .. extra.ext
             write(
                 template.generate(palette, {
-                    extra = info.label,
-                    url = info.url,
-                    upstream = url,
+                    extra = extra.label,
+                    url = extra.url,
+                    upstream = URL .. fname,
                     theme = string.upper(theme),
                 }),
                 fname
