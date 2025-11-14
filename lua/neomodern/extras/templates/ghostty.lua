@@ -7,7 +7,6 @@ function M.generate(colors, info)
     colors.url = info.url
     colors.upstream = info.upstream
     colors.theme = info.theme
-    local c = vim.tbl_extend("force", colors, colors.colormap)
 
     local ghostty = Util.template(
         [=[
@@ -38,7 +37,7 @@ cursor-color = ${fg}
 selection-background = ${visual}
 selection-foreground = ${type}
 ]=],
-        c
+        colors
     )
 
     return ghostty
