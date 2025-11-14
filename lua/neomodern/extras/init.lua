@@ -4,7 +4,7 @@ local URL = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
 ---@alias Extra {name: string, ext:string, url:string, label:string}
 
 --- @type table<Extra>
-M.extras = {
+local extras = {
     -- stylua: ignore start
     { name = "alacritty", ext = ".toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty"},
     { name = "fish", ext = ".fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish"},
@@ -35,16 +35,20 @@ end
 
 function M.generate()
     local themes = require("neomodern.palette").themes
-    for _, extra in ipairs(M.extras) do
-        package.loaded["neomodern.extras." .. extra.name] = nil
-        local template = require("neomodern.extras.templates" .. extra.name)
+    for _, e in ipairs(extras) do
+        package.loaded["neomodern.extras." .. e.name] = nil
+        local template = require("neomodern.extras.templates." .. e.name)
         for _, theme in pairs(themes) do
-            local palette = require("neomodern.palette").get(theme, "dark")
-            local fname = extra.name .. "/" .. theme .. extra.ext
+            local palette = require("neomodern.palette").get({
+                theme = theme,
+                variant = "dark",
+                flat = true,
+            })
+            local fname = e.name .. "/" .. theme .. e.ext
             write(
                 template.generate(palette, {
-                    extra = extra.label,
-                    url = extra.url,
+                    extra = e.label,
+                    url = e.url,
                     upstream = URL .. fname,
                     theme = string.upper(theme),
                 }),

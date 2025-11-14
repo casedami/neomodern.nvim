@@ -1,57 +1,56 @@
 local M = {}
 
-function M.get()
+---@param palette neomodern.Theme
+function M.get(palette)
     ---@type neomodern.Config
     local Config = require("neomodern").options()
     local Util = require("neomodern.util")
-    ---@type neomodern.Theme
-    local c = require("neomodern.palette").get(Config.theme, Config.variant)
     local hl = {}
 
     local syntax = {
-        Boolean = { fg = c.number }, -- boolean constants
-        Character = { fg = c.string }, -- character constants
-        Comment = { fg = c.comment, fmt = Config.code_style.comments }, -- comments
-        Constant = { fg = c.constant, fmt = Config.code_style.constants }, -- (preferred) any constant
-        Delimiter = { fg = c.fg }, -- delimiter characters
-        Float = { fg = c.number }, -- float constants
-        Function = { fg = c.func, fmt = Config.code_style.functions }, -- functions
-        Error = { fg = c.diag_red }, -- (preferred) any erroneous construct
-        Exception = { fg = c.diag_red }, -- 'try', 'catch', 'throw'
-        Identifier = { fg = c.property, fmt = Config.code_style.variables }, -- (preferred) any variable
-        Keyword = { fg = c.keyword, fmt = Config.code_style.keywords }, -- any other keyword
-        Conditional = { fg = c.keyword, fmt = Config.code_style.conditionals }, -- conditionals
-        -- Repeat = { fg = c.keyword, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
-        -- Label = { fg = c.keyword }, -- 'case', 'default', etc
-        Number = { fg = c.number }, -- number constant
-        Operator = { fg = c.operator, fmt = Config.code_style.operators }, -- '+', '*', 'sizeof' etc
-        PreProc = { fg = c.string }, -- (preferred) generic preprocessor
-        -- Define = { fg = c.comment }, -- preprocessor '#define'
-        Include = { fg = c.constant, fmt = Config.code_style.keywords }, -- preprocessor '#include'
-        Macro = { fg = c.number, fmt = "italic" }, -- macros
-        -- PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
-        Special = { fg = c.type }, -- (preferred) any special symbol
-        SpecialChar = { fg = c.keyword }, -- special character in a constant
-        -- SpecialComment = { fg = c.keyword, fmt = config.code_style.comments }, -- special things inside comments
-        -- Tag = { fg = c.func }, -- can use <C-]> on this
-        Statement = { fg = c.keyword }, -- (preferred) any statement
-        String = { fg = c.string, fmt = Config.code_style.strings }, -- string constants
-        Title = { fg = c.keyword },
-        Type = { fg = c.type }, -- (preferred) 'int', 'long', 'char' etc
-        -- StorageClass = { fg = c.constant, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
-        -- Structure = { fg = c.constant }, -- 'struct', 'union', 'enum' etc
-        -- Typedef = { fg = c.constant }, -- 'typedef'
-        Todo = { fg = Util.blend(c.comment, 0.6, c.fg), fmt = "bolditalic" }, -- (preferred) 'TODO' keywords in comments
+        Boolean = { fg = palette.number }, -- boolean constants
+        Character = { fg = palette.string }, -- character constants
+        Comment = { fg = palette.comment, fmt = Config.code_style.comments }, -- comments
+        Constant = { fg = palette.constant, fmt = Config.code_style.constants }, -- (preferred) any constant
+        Delimiter = { fg = palette.fg }, -- delimiter characters
+        Float = { fg = palette.number }, -- float constants
+        Function = { fg = palette.func, fmt = Config.code_style.functions }, -- functions
+        Error = { fg = palette.diag_red }, -- (preferred) any erroneous construct
+        Exception = { fg = palette.diag_red }, -- 'try', 'catch', 'throw'
+        Identifier = { fg = palette.property, fmt = Config.code_style.variables }, -- (preferred) any variable
+        Keyword = { fg = palette.keyword, fmt = Config.code_style.keywords }, -- any other keyword
+        Conditional = { fg = palette.keyword, fmt = Config.code_style.conditionals }, -- conditionals
+        -- Repeat = { fg = palette.keyword, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
+        -- Label = { fg = palette.keyword }, -- 'case', 'default', etc
+        Number = { fg = palette.number }, -- number constant
+        Operator = { fg = palette.operator, fmt = Config.code_style.operators }, -- '+', '*', 'sizeof' etc
+        PreProc = { fg = palette.string }, -- (preferred) generic preprocessor
+        -- Define = { fg = palette.comment }, -- preprocessor '#define'
+        Include = { fg = palette.constant, fmt = Config.code_style.keywords }, -- preprocessor '#include'
+        Macro = { fg = palette.number, fmt = "italic" }, -- macros
+        -- PreCondit = { fg = palette.comment }, -- preprocessor conditionals '#if', '#endif' etc
+        Special = { fg = palette.type }, -- (preferred) any special symbol
+        SpecialChar = { fg = palette.keyword }, -- special character in a constant
+        -- SpecialComment = { fg = palette.keyword, fmt = config.code_style.comments }, -- special things inside comments
+        -- Tag = { fg = palette.func }, -- can use <C-]> on this
+        Statement = { fg = palette.keyword }, -- (preferred) any statement
+        String = { fg = palette.string, fmt = Config.code_style.strings }, -- string constants
+        Title = { fg = palette.keyword },
+        Type = { fg = palette.type }, -- (preferred) 'int', 'long', 'char' etc
+        -- StorageClass = { fg = palette.constant, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
+        -- Structure = { fg = palette.constant }, -- 'struct', 'union', 'enum' etc
+        -- Typedef = { fg = palette.constant }, -- 'typedef'
+        Todo = { fg = Util.blend(palette.comment, 0.6, palette.fg), fmt = "bolditalic" }, -- (preferred) 'TODO' keywords in comments
     }
 
     local treesitter = vim.version()["minor"] > 0.8
             and {
                 -- identifiers
-                ["@variable"] = { fg = c.fg, fmt = Config.code_style.variables }, -- any variable that does not have another higM.ght
+                ["@variable"] = { fg = palette.fg, fmt = Config.code_style.variables }, -- any variable that does not have another higM.ght
                 ["@variable.builtin"] = syntax["Type"], -- variable names that are defined by the language, like 'this' or 'self'
-                ["@variable.member"] = { fg = c.property }, -- fields
-                ["@variable.parameter"] = { fg = c.alt }, -- parameters of a function
-                -- ["@variable.field"] = { fg = c.property }, -- fields
+                ["@variable.member"] = { fg = palette.property }, -- fields
+                ["@variable.parameter"] = { fg = palette.alt }, -- parameters of a function
+                -- ["@variable.field"] = { fg = palette.property }, -- fields
 
                 -- ["@constant"] = { link = "Constant" }, -- constants
                 ["@constant.builtin"] = syntax["Type"], -- constants that are defined by the language, like 'nil' in lua
@@ -68,7 +67,7 @@ function M.get()
                 ["@string.regexp"] = syntax["SpecialChar"], -- regex
                 ["@string.escape"] = syntax["SpecialChar"], -- escape characters within string
                 ["@string.special.symbol"] = syntax["Identifier"],
-                -- ["@string.special.url"] = { fg = c.func }, -- urls, links, emails
+                -- ["@string.special.url"] = { fg = palette.func }, -- urls, links, emails
 
                 -- ["@character"] = { link = "String" }, -- character literals
                 -- ["@character.special"] = M.syntax["SpecialChar"], -- special characters
@@ -84,7 +83,7 @@ function M.get()
                 -- ["@type.qualifier"]
 
                 ["@attribute"] = syntax["Function"], -- attributes, like <decorators> in python
-                -- ["@property"] = { fg = c.property }, --same as TSField
+                -- ["@property"] = { fg = palette.property }, --same as TSField
 
                 -- functions
                 ["@function"] = syntax["Function"], -- functions
@@ -94,27 +93,30 @@ function M.get()
                 -- ["@function.method"]
                 -- ["@function.method.call"]
 
-                -- ["@constructor"] = { fg = c.constant, fmt = config.code_style.functions }, -- constructor calls and definitions
+                -- ["@constructor"] = { fg = palette.constant, fmt = config.code_style.functions }, -- constructor calls and definitions
                 ["@constructor.lua"] = {
-                    fg = c.alt,
+                    fg = palette.alt,
                     fmt = Config.code_style.functions,
                 }, -- constructor calls and definitions, `= { }` in lua
                 ["@operator"] = syntax["Operator"], -- operators, like `+`
 
                 -- keywords
-                ["@keyword"] = { fg = c.keyword, fmt = Config.code_style.keywords }, -- keywords that don't fall in previous categories
+                ["@keyword"] = {
+                    fg = palette.keyword,
+                    fmt = Config.code_style.keywords,
+                }, -- keywords that don't fall in previous categories
                 ["@keyword.exception"] = syntax["Exception"], -- exception related keywords
                 -- ["@keyword.import"] = M.syntax["PreProc"], -- keywords used to define a function
                 ["@keyword.conditional"] = {
-                    fg = c.keyword,
+                    fg = palette.keyword,
                     fmt = Config.code_style.conditionals,
                 }, -- keywords for conditional statements
                 ["@keyword.operator"] = {
-                    fg = c.keyword,
+                    fg = palette.keyword,
                     fmt = Config.code_style.operators,
                 }, -- keyword operator (eg, 'in' in python)
                 ["@keyword.return"] = {
-                    fg = c.keyword,
+                    fg = palette.keyword,
                     fmt = Config.code_style.keyword_return,
                 }, -- keywords used to define a function
                 -- ["@keyword.function"] = M.syntax["Function"], -- keywords used to define a function
@@ -123,134 +125,138 @@ function M.get()
                 -- ["@keyword.repeat"] = M.syntax["Repeat"], -- for keywords related to loops
 
                 -- punctuation
-                ["@punctuation.delimiter"] = { fg = c.fg }, -- delimiters, like `; . , `
+                ["@punctuation.delimiter"] = { fg = palette.fg }, -- delimiters, like `; . , `
                 ["@punctuation.bracket"] = {
-                    fg = c.operator,
+                    fg = palette.operator,
                 }, -- brackets and parentheses
                 ["@punctuation.special"] = syntax["SpecialChar"], -- punctuation that does not fall into above categories, like `{}` in string interpolation
 
                 -- comment
                 -- ["@comment"]
                 ["@comment.error"] = {
-                    fg = Util.blend(c.comment, 0.4, c.diag_red),
+                    fg = Util.blend(palette.comment, 0.4, palette.diag_red),
                     fmt = "bolditalic",
                 },
                 ["@comment.warning"] = {
-                    fg = Util.blend(c.comment, 0.4, c.diag_yellow),
+                    fg = Util.blend(palette.comment, 0.4, palette.diag_yellow),
                     fmt = "bolditalic",
                 },
                 ["@comment.note"] = {
-                    fg = Util.blend(c.comment, 0.4, c.diag_blue),
+                    fg = Util.blend(palette.comment, 0.4, palette.diag_blue),
                     fmt = "bolditalic",
                 },
 
                 -- markup
-                ["@markup"] = { fg = c.fg }, -- text in markup language
-                ["@markup.strong"] = { fg = c.fg, fmt = "bold" }, -- bold
-                ["@markup.italic"] = { fg = c.fg, fmt = "italic" }, -- italic
-                ["@markup.underline"] = { fg = c.fg, fmt = "underline" }, -- underline
+                ["@markup"] = { fg = palette.fg }, -- text in markup language
+                ["@markup.strong"] = { fg = palette.fg, fmt = "bold" }, -- bold
+                ["@markup.italic"] = { fg = palette.fg, fmt = "italic" }, -- italic
+                ["@markup.underline"] = { fg = palette.fg, fmt = "underline" }, -- underline
                 ["@markup.strikethrough"] = {
-                    fg = c.comment,
+                    fg = palette.comment,
                     fmt = "strikethrough",
                 }, -- strikethrough
                 ["@markup.heading"] = {
-                    fg = c.keyword,
+                    fg = palette.keyword,
                     fmt = Config.code_style.headings,
                 }, -- markdown titles
-                ["@markup.quote.markdown"] = { fg = c.comment }, -- quotes with >
-                ["@markup.link.uri"] = { fg = c.alt, fmt = "underline" }, -- urls, links, emails
-                ["@markup.link"] = { fg = c.type }, -- text references, footnotes, citations, etc
-                ["@markup.list"] = { fg = c.func },
-                ["@markup.list.checked"] = { fg = c.func }, -- todo checked
-                ["@markup.list.unchecked"] = { fg = c.func }, -- todo unchecked
-                ["@markup.raw"] = { fg = c.func }, -- inline code in markdown
-                ["@markup.math"] = { fg = c.type }, -- math environments, like `$$` in latex
+                ["@markup.quote.markdown"] = { fg = palette.comment }, -- quotes with >
+                ["@markup.link.uri"] = { fg = palette.alt, fmt = "underline" }, -- urls, links, emails
+                ["@markup.link"] = { fg = palette.type }, -- text references, footnotes, citations, etc
+                ["@markup.list"] = { fg = palette.func },
+                ["@markup.list.checked"] = { fg = palette.func }, -- todo checked
+                ["@markup.list.unchecked"] = { fg = palette.func }, -- todo unchecked
+                ["@markup.raw"] = { fg = palette.func }, -- inline code in markdown
+                ["@markup.math"] = { fg = palette.type }, -- math environments, like `$$` in latex
 
                 -- diff
-                ["@diff.plus"] = { fg = c.diag_green }, -- added text (diff files)
-                ["@diff.minus"] = { fg = c.diag_red }, -- removed text (diff files)
-                ["@diff.delta"] = { fg = c.diag_blue }, -- changed text (diff files)
+                ["@diff.plus"] = { fg = palette.diag_green }, -- added text (diff files)
+                ["@diff.minus"] = { fg = palette.diag_red }, -- removed text (diff files)
+                ["@diff.delta"] = { fg = palette.diag_blue }, -- changed text (diff files)
 
                 -- tags
                 -- ["@tag"]
                 ["@tag.attribute"] = syntax["Identifier"], -- tags, like in html
-                ["@tag.delimiter"] = { fg = c.fg }, -- tag delimiter < >
+                ["@tag.delimiter"] = { fg = palette.fg }, -- tag delimiter < >
             }
         or nil
 
     hl.lsp = vim.version()["minor"] > 0.9
             and {
                 ["@lsp.typemod.variable.global"] = {
-                    fg = Util.blend(c.constant, 0.8, c.bg),
+                    fg = Util.blend(palette.constant, 0.8, palette.bg),
                 },
                 ["@lsp.typemod.keyword.documentation"] = {
-                    fg = Util.blend(c.type, 0.8, c.bg),
+                    fg = Util.blend(palette.type, 0.8, palette.bg),
                 },
                 ["@lsp.type.namespace"] = {
-                    fg = Util.blend(c.constant, 0.8, c.bg),
+                    fg = Util.blend(palette.constant, 0.8, palette.bg),
                 },
                 ["@lsp.type.macro"] = syntax["Macro"],
                 ["@lsp.type.parameter"] = treesitter["@variable.parameter"],
-                ["@lsp.type.lifetime"] = { fg = c.type, fmt = "italic" },
-                ["@lsp.type.readonly"] = { fg = c.constant, fmt = "italic" },
-                ["@lsp.mod.readonly"] = { fg = c.constant, fmt = "italic" },
+                ["@lsp.type.lifetime"] = { fg = palette.type, fmt = "italic" },
+                ["@lsp.type.readonly"] = { fg = palette.constant, fmt = "italic" },
+                ["@lsp.mod.readonly"] = { fg = palette.constant, fmt = "italic" },
                 ["@lsp.mod.typeHint"] = syntax["Type"],
             }
         or nil
     hl.diag = {
-        DiagnosticError = { fg = c.diag_red },
-        DiagnosticHint = { fg = c.diag_blue },
-        DiagnosticInfo = { fg = c.diag_blue, fmt = "italic" },
-        DiagnosticWarn = { fg = c.diag_yellow },
+        DiagnosticError = { fg = palette.diag_red },
+        DiagnosticHint = { fg = palette.diag_blue },
+        DiagnosticInfo = { fg = palette.diag_blue, fmt = "italic" },
+        DiagnosticWarn = { fg = palette.diag_yellow },
 
         DiagnosticVirtualTextError = {
-            bg = Config.diagnostics.background and Util.blend(c.diag_red, 0.1, c.bg)
+            bg = Config.diagnostics.background
+                    and Util.blend(palette.diag_red, 0.1, palette.bg)
                 or nil,
-            fg = c.diag_red,
+            fg = palette.diag_red,
         },
         DiagnosticVirtualTextWarn = {
-            bg = Config.diagnostics.background and Util.blend(c.diag_yellow, 0.1, c.bg)
+            bg = Config.diagnostics.background
+                    and Util.blend(palette.diag_yellow, 0.1, palette.bg)
                 or nil,
-            fg = c.diag_yellow,
+            fg = palette.diag_yellow,
         },
         DiagnosticVirtualTextInfo = {
-            bg = Config.diagnostics.background and Util.blend(c.diag_blue, 0.1, c.bg)
+            bg = Config.diagnostics.background
+                    and Util.blend(palette.diag_blue, 0.1, palette.bg)
                 or nil,
-            fg = c.diag_blue,
+            fg = palette.diag_blue,
         },
         DiagnosticVirtualTextHint = {
-            bg = Config.diagnostics.background and Util.blend(c.diag_blue, 0.1, c.bg)
+            bg = Config.diagnostics.background
+                    and Util.blend(palette.diag_blue, 0.1, palette.bg)
                 or nil,
-            fg = c.diag_blue,
+            fg = palette.diag_blue,
         },
 
         DiagnosticUnderlineError = {
             fmt = Config.diagnostics.undercurl and "undercurl" or "underline",
-            sp = c.diag_red,
+            sp = palette.diag_red,
         },
         DiagnosticUnderlineHint = {
             fmt = Config.diagnostics.undercurl and "undercurl" or "underline",
-            sp = c.diag_blue,
+            sp = palette.diag_blue,
         },
         DiagnosticUnderlineInfo = {
             fmt = Config.diagnostics.undercurl and "undercurl" or "underline",
-            sp = c.diag_blue,
+            sp = palette.diag_blue,
         },
         DiagnosticUnderlineWarn = {
             fmt = Config.diagnostics.undercurl and "undercurl" or "underline",
-            sp = c.diag_yellow,
+            sp = palette.diag_yellow,
         },
 
-        LspReferenceText = { bg = c.visual },
-        LspReferenceWrite = { bg = c.visual },
-        LspReferenceRead = { bg = c.visual },
+        LspReferenceText = { bg = palette.visual },
+        LspReferenceWrite = { bg = palette.visual },
+        LspReferenceRead = { bg = palette.visual },
 
         LspCodeLens = {
-            fg = c.keyword,
-            bg = Util.blend(c.keyword, 0.1, c.bg),
+            fg = palette.keyword,
+            bg = Util.blend(palette.keyword, 0.1, palette.bg),
             fmt = Config.code_style.comments,
         },
-        LspCodeLensSeparator = { fg = c.comment },
+        LspCodeLensSeparator = { fg = palette.comment },
     }
     hl.LspDiagnosticsDefaultError = hl.DiagnosticError
     hl.LspDiagnosticsDefaultHint = hl.DiagnosticHint

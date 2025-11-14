@@ -33,7 +33,11 @@ function M.load(theme)
     M._opts.variant = vim.o.background
     require("neomodern.highlights").setup()
     if M._opts.term_colors then
-        require("neomodern.palette").set_term_colors(M._opts.theme, M._opts.variant)
+        require("neomodern.palette").set_term_colors({
+            theme = M._opts.theme,
+            variant = M._opts.variant,
+            flat = false,
+        })
     end
 end
 

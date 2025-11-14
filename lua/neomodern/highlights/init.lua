@@ -48,11 +48,15 @@ function M.setup()
     ---@type neomodern.Config
     local Config = require("neomodern").options()
     ---@type neomodern.Theme
-    local c = require("neomodern.palette").get(Config.theme, Config.variant)
+    local palette = require("neomodern.palette").get({
+        theme = Config.theme,
+        variant = Config.variant,
+        flat = false,
+    })
 
-    local VIM = require("neomodern.highlights.vim").get()
-    local SYNTAX = require("neomodern.highlights.syntax").get()
-    local PLUGIN = require("neomodern.highlights.plugin").get()
+    local VIM = require("neomodern.highlights.vim").get(palette)
+    local SYNTAX = require("neomodern.highlights.syntax").get(palette)
+    local PLUGIN = require("neomodern.highlights.plugin").get(palette)
 
     set_highlights(VIM)
     for _, group in pairs(SYNTAX) do
@@ -67,10 +71,10 @@ function M.setup()
             string.format(
                 "highlight %s %s %s %s %s",
                 group,
-                overwrite("guifg", hl.fg, c),
-                overwrite("guibg", hl.bg, c),
-                overwrite("guisp", hl.sp, c),
-                overwrite("gui", hl.fmt, c)
+                overwrite("guifg", hl.fg, palette),
+                overwrite("guibg", hl.bg, palette),
+                overwrite("guisp", hl.sp, palette),
+                overwrite("gui", hl.fmt, palette)
             )
         )
     end
