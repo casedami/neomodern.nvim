@@ -1,68 +1,59 @@
-local Util = require("neomodern.util")
-
-local M = {}
-
-function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-    local kitty = Util.template(
-        [=[
+---@type neomodern.Extra
+local M = {
+    name = "kitty",
+    ext = "conf",
+    url = "https://sw.kovidgoyal.net/kitty/conf.html",
+    template = [=[
 # vim:ft=kitty
 
-# name: ${theme} colors for ${extra}
+# name: ${theme} colors for kitty
 # url: ${url}
 # upstream: ${upstream}
 # author: Casey Miller
 
-background ${bg}
-# alternate, darker background ${alt_bg}
-foreground ${fg}
-selection_background ${visual}
-selection_foreground ${fg}
-url_color ${blue}
-cursor ${fg}
-cursor_text_color ${bg}
+background #${bg}
+foreground #${fg}
+selection_background #${visual}
+selection_foreground #${fg}
+url_color #${blue}
+cursor #${fg}
+cursor_text_color #${bg}
 
 # Tabs
-active_tab_background ${visual}
-active_tab_foreground ${alt}
-inactive_tab_background ${line}
-inactive_tab_foreground ${grey}
-#tab_bar_background ${bg}
+active_tab_background #${visual}
+active_tab_foreground #${alt}
+inactive_tab_background #${line}
+inactive_tab_foreground #${grey}
+#tab_bar_background #${bg}
 
 # Windows
-active_border_color ${alt}
-inactive_border_color ${comment}
+active_border_color #${alt}
+inactive_border_color #${comment}
 
 # normal
-color0 ${c00}
-color1 ${c01}
-color2 ${c02}
-color3 ${c03}
-color4 ${c04}
-color5 ${c05}
-color6 ${c06}
-color7 ${c07}
+color0 #${black}
+color1 #${red}
+color2 #${green}
+color3 #${yellow}
+color4 #${blue}
+color5 #${magenta}
+color6 #${cyan}
+color7 #${white}
 
 # bright
-color8 ${c08}
-color9 ${c09}
-color10 ${c0A}
-color11 ${c0B}
-color12 ${c0C}
-color13 ${c0D}
-color14 ${c0E}
-color15 ${c0F}
+color8 #${bright_black}
+color9 #${bright_red}
+color10 #${bright_green}
+color11 #${bright_yellow}
+color12 #${bright_blue}
+color13 #${bright_magenta}
+color14 #${bright_cyan}
+color15 #${bright_white}
 
 # extended colors
-color16 ${alt_bg}
-color17 ${alt}
+color16 #${alt_bg}
+color17 #${alt}
 ]=],
-        colors
-    )
-    return kitty
-end
+}
 
 return M

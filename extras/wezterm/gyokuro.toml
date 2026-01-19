@@ -1,48 +1,47 @@
 [colors]
-foreground = "#bbbac1"
+foreground = "#AFB0A6"
 background = "#1b1c1d"
-# background = "#161617" # alternate, darker bg
-cursor_bg = "#bbbac1"
-cursor_border = "#767777"
+cursor_bg = "#AFB0A6"
+cursor_border = "#6B6B67"
 cursor_fg = "#1b1c1d"
-selection_bg = "#323334"
-selection_fg = "#bbc7b1"
-split = "#767777"
-compose_cursor = "#a69e6f"
-scrollbar_thumb = "#222324"
+selection_bg = "#2D2E2F"
+selection_fg = "#AFBFAC"
+split = "#6B6B67"
+compose_cursor = "#94A991"
+scrollbar_thumb = "#232425"
 
-ansi = ["#767777", "#9e5560", "#72966c", "#a2ad7b", "#50616F", "#8B7177", "#5B6078", "#7B7B7F"]
-brights = ["#767777", "#b08c7d", "#8bab85", "#bbc7b1", "#748fa6", "#d6a9b3", "#868db5", "#bbbac1"]
+ansi = ["#232425", "#AB878F", "#61765E", "#857E59", "#5D7285", "#6B7191", "#8D7064", "#696A64"]
+brights = ["#6B6B67", "#d6a9b3", "#799475", "#a69e6f", "#748fa6", "#868db5", "#b08c7d", "#AFB0A6"]
 
 [colors.tab_bar]
-inactive_tab_edge = "#7B7B7F"
+inactive_tab_edge = "#696A64"
 background = "#1b1c1d"
 
 [colors.tab_bar.active_tab]
-fg_color = "#a69e6f"
-bg_color = "#323334"
+fg_color = "#94A991"
+bg_color = "#2D2E2F"
 
 [colors.tab_bar.inactive_tab]
-fg_color = "#767777"
-bg_color = "#222324"
+fg_color = "#6B6B67"
+bg_color = "#232425"
 
 [colors.tab_bar.inactive_tab_hover]
-fg_color = "#767777"
-bg_color = "#222324"
+fg_color = "#6B6B67"
+bg_color = "#232425"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]
-fg_color = "#a69e6f"
-bg_color = "#323334"
+fg_color = "#94A991"
+bg_color = "#2D2E2F"
 intensity = "Bold"
 
 [colors.tab_bar.new_tab]
-fg_color = "#a69e6f"
+fg_color = "#94A991"
 bg_color = "#1b1c1d"
 
 [metadata]
 aliases = []
 name = "gyokuro"
 url = "https://wezfurlong.org/wezterm/config/files.html"
-upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/gyokuro.toml"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
 author = "Casey Miller"

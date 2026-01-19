@@ -1,45 +1,39 @@
-# name: ROSEPRIME colors for Alacritty
+# name: roseprime colors for alacritty
 # url: https://github.com/alacritty/alacritty
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/alacritty/roseprime.toml
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
 # author: Casey Miller
 
 # Default colors
 [colors.primary]
-background = '#121315'
-# alternate, darker background = '#111111'
-foreground = '#adadcc'
+background = '#15151a'
+foreground = '#C5B6C6'
 
 #[colors.cursor]
-#cursor = '#adadcc'
-#text = '#121315'
+#cursor = '#C5B6C6'
+#text = '#15151a'
 
 # Normal colors
 [colors.normal]
-black = '#666a82'
-red = '#ba5f60'
-green = '#647977'
-yellow = '#c4959c'
-blue = '#6172A0'
-magenta = '#6C6B9B'
-cyan = '#436285'
-white = '#6F6F83'
+black = '#1D1D22'
+red = '#9D777D'
+green = '#7C9793'
+yellow = '#A18877'
+blue = '#788CC2'
+magenta = '#8583BC'
+cyan = '#4C6B8D'
+white = '#766D77'
 
 # Bright colors
 [colors.bright]
-black = '#666a82'
-red = '#ad82a2'
+black = '#67606A'
+red = '#c4959c'
 green = '#9bbdb8'
-yellow = '#d2af98'
-blue = '#95b1fc'
-magenta = '#a8a6f5'
-cyan = '#6397cf'
-white = '#adadcc'
+yellow = '#c9aa95'
+blue = '#96aff2'
+magenta = '#a6a4eb'
+cyan = '#5f86b0'
+white = '#C5B6C6'
 
-# Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '#111111'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#a8a6f5'
+color = '#9FB6D0'

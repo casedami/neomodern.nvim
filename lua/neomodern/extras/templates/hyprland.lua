@@ -1,30 +1,17 @@
-local Util = require("neomodern.util")
-
-local M = {}
-
-function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-    colors.theme_lower = string.lower(info.theme)
-    local c = {}
-    for k, v in pairs(colors) do
-        if type(v) == "string" then
-            c[k] = v:gsub("^#", "")
-        end
-    end
-
-    local hyprland = Util.template(
-        [=[
-# name: ${theme} colors for ${extra} 
+---@type neomodern.Extra
+local M = {
+    name = "hyprland",
+    ext = "conf",
+    url = "https://github.com/hyprwm/Hyprland",
+    template = [=[
+# name: ${theme} colors for hyprland
 # url: ${url}                        
 # upstream: ${upstream}              
 # author: Casey Miller               
 
 # 1. copy into ~/.config/hypr/
 # 2. include at the top of your hyprland.conf:
-#       source=~/.config/hypr/${theme_lower}.conf
+#       source=~/.config/hypr/${theme}.conf
 # 3. use colors in your hyprland.conf, e.g.:
 #       non-alpha:  $COLOR (e.g. $func) 
 #       alpha:      rgba($COLORAlpha<transparency> 
@@ -32,9 +19,6 @@ function M.generate(colors, info)
 
 $alt = rgb(${alt})
 $altAlpha = ${alt}
-
-$alt_bg = rgb(${alt_bg})
-$alt_bgAlpha = ${alt_bg}
 
 $bg = rgb(${bg})
 $bgAlpha = ${bg}
@@ -87,10 +71,6 @@ $diag_yellowAlpha = ${diag_yellow}
 $diag_green = rgb(${diag_green})
 $diag_greenAlpha = ${diag_green}
 ]=],
-        c
-    )
-
-    return hyprland
-end
+}
 
 return M

@@ -1,26 +1,26 @@
-# name: ${theme} colors for ${extra}
-# url: ${url}
-# upstream: ${upstream}
+# name: iceclimber colors for ghostty
+# url: https://github.com/ghostty-org/ghostty
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
 # author: Casey Miller
 
-palette = 0=${c00}
-palette = 1=${c01}
-palette = 2=${c02}
-palette = 3=${c03}
-palette = 4=${c04}
-palette = 5=${c05}
-palette = 6=${c06}
-palette = 7=${c07}
-palette = 8=${c08}
-palette = 9=${c09}
-palette = 10=${c0A}
-palette = 11=${c0B}
-palette = 12=${c0C}
-palette = 13=${c0D}
-palette = 14=${c0E}
-palette = 15=${c0F}
-background = ${bg}
-foreground = {$fg}
-cursor-color = {$fg}
-selection-background = ${visual}
-selection-foreground = ${type}
+palette = 0=#1F1F21
+palette = 1=#A67E97
+palette = 2=#738980
+palette = 3=#A68170
+palette = 4=#6C81B8
+palette = 5=#6E6DA7
+palette = 6=#55787D
+palette = 7=#606069
+palette = 8=#61616A
+palette = 9=#cf9dbd
+palette = 10=#90aba0
+palette = 11=#cfa18c
+palette = 12=#87a1e6
+palette = 13=#8a88d1
+palette = 14=#6a969c
+palette = 15=#A0A0AF
+background = #171719
+foreground = #A0A0AF
+cursor-color = #A0A0AF
+selection-background = #2A2A2B
+selection-foreground = #B9B8E3

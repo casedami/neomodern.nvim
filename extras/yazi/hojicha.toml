@@ -1,111 +1,111 @@
-# name: HOJICHA colors for Yazi
+# name: hojicha colors for yazi
 # url: https://github.com/sxyazi/yazi
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/yazi/hojicha.toml
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
 # author: Casey Miller
 
-[manager]
-cwd = { fg = "#808796" }
+[mgr]
+cwd = { fg = "#6E665E" }
 
-hovered         = { fg = "#8a879c", bg = "#1b1c1d" }
-preview_hovered = { fg = "#8a879c", bg = "#1b1c1d" }
+hovered         = { fg = "#8a879c", bg = "#1F1E1C" }
+preview_hovered = { fg = "#8a879c", bg = "#1F1E1C" }
 
-find_keyword  = { fg = "#9c797d", italic = true }
-find_position = { fg = "#9c797d", bg = "reset", italic = true }
+find_keyword  = { fg = "#808796", italic = true }
+find_position = { fg = "#808796", bg = "reset", italic = true }
 
-marker_copied   = { fg = "#b5ae84", bg = "#b5ae84" }
-marker_cut      = { fg = "#9e5560", bg = "#9e5560", crossed = true }
-marker_marked   = { bg = "#a7ab93", blink = true }
-marker_selected = { bg = "#a7ab93", blink = true }
+marker_copied   = { fg = "#ab836c", bg = "#ab836c" }
+marker_cut      = { fg = "#D47E7E", bg = "#D47E7E", crossed = true }
+marker_marked   = { bg = "#8D978B", blink = true }
+marker_selected = { bg = "#8D978B", blink = true }
 
-tab_active   = { fg = "#b0b58a", bg = "#1b1c1d", bold = true, reversed = true }
-tab_inactive = { fg = "#696969", bg = "#1b1c1d" }
+tab_active   = { fg = "#717d6e", bg = "#1F1E1C", bold = true, reversed = true }
+tab_inactive = { fg = "#68605F", bg = "#1F1E1C" }
 tab_width    = 1
 
-count_cut      = { fg = "#9e5560" }
-count_copied   = { fg = "#b5ae84" }
-count_selected = { fg = "#a7ab93", italic = true, blink = true }
+count_cut      = { fg = "#D47E7E" }
+count_copied   = { fg = "#ab836c" }
+count_selected = { fg = "#8D978B", italic = true, blink = true }
 
 border_symbol = "│"
-border_style  = { fg = "#696969" }
+border_style  = { fg = "#68605F" }
 
 [mode]
-normal_main   = { fg = "#161616", bg = "#a18b7f" }
-normal_alt    = { fg = "#161616", bg = "#a18b7f" }
-select_main   = { fg = "#161616", bg = "#a7ab93" }
-select_alt    = { fg = "#161616", bg = "#a7ab93" }
-unset_main    = { fg = "#161616", bg = "#9c797d" }
-unset_alt     = { fg = "#161616", bg = "#9c797d" }
+normal_main   = { fg = "#171614", bg = "#8a7f76" }
+normal_alt    = { fg = "#171614", bg = "#8a7f76" }
+select_main   = { fg = "#171614", bg = "#8D978B" }
+select_alt    = { fg = "#171614", bg = "#8D978B" }
+unset_main    = { fg = "#171614", bg = "#808796" }
+unset_alt     = { fg = "#171614", bg = "#808796" }
 
 [status]
-overall = {  fg = "#696969", bg = "#161616", bold = true }
+overall = {  fg = "#68605F", bg = "#171614", bold = true }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-progress_label  = { fg = "#b0b58a", bg = "#333333" }
-progress_normal = { fg = "#b0b58a", bg = "#333333" }
-progress_error  = { fg = "#9e5560", bg = "#333333" }
+progress_label  = { fg = "#717d6e", bg = "#2A2927" }
+progress_normal = { fg = "#717d6e", bg = "#2A2927" }
+progress_error  = { fg = "#D47E7E", bg = "#2A2927" }
 
 permissions_t = { fg = "#8a879c" }
-permissions_r = { fg = "#9c797d" }
-permissions_w = { fg = "#a18b7f" }
-permissions_x = { fg = "#808796" }
-permissions_s = { fg = "#b0b58a" }
+permissions_r = { fg = "#808796" }
+permissions_w = { fg = "#8a7f76" }
+permissions_x = { fg = "#6E665E" }
+permissions_s = { fg = "#717d6e" }
 
 [input]
-border   = { fg = "#696969" }
-title    = { fg = "#b0b58a" }
+border   = { fg = "#68605F" }
+title    = { fg = "#717d6e" }
 value    = {}
-selected = { fg = "#adacac", bg = "#333333" }
+selected = { fg = "#AEA09F", bg = "#2A2927" }
 
 [confirm]
-border   = { fg = "#696969" }
-title = { fg = "#b0b58a" }
-btn_yes = { fg = "#9e5560", bg = "#1b1c1d" }
-btn_no = { fg = "#8bab85", bg = "#1b1c1d" }
+border   = { fg = "#68605F" }
+title = { fg = "#717d6e" }
+btn_yes = { fg = "#D47E7E", bg = "#1F1E1C" }
+btn_no = { fg = "#67896D", bg = "#1F1E1C" }
 
 [tasks]
-border  = { fg = "#696969" }
-title    = { fg = "#b0b58a" }
+border  = { fg = "#68605F" }
+title    = { fg = "#717d6e" }
 hovered = { underline = true }
 
 [which]
-mask            = { bg = "#141414" }
-cand            = { fg = "#b5ae84" }
+mask            = { bg = "#1F1E1C" }
+cand            = { fg = "#ab836c" }
 rest            = { fg = "#8a879c" }
-desc            = { fg = "#9c797d" }
+desc            = { fg = "#808796" }
 separator       = "  "
-separator_style = { fg = "#856b6c"}
+separator_style = { fg = "#5A6458"}
 
 [spot]
-border = { fg = "#696969" }
-title = { fg = "#b0b58a" }
-tbl_col = { fg = "#9c797d" }
-tbl_cell = { fg = "#8a879c", bg = "#1b1c1d" }
+border = { fg = "#68605F" }
+title = { fg = "#717d6e" }
+tbl_col = { fg = "#808796" }
+tbl_cell = { fg = "#8a879c", bg = "#1F1E1C" }
 
 [help]
-on      = { fg = "#b5ae84" }
-run    = { fg = "#9c797d" }
-desc    = { fg = "#696969" }
-hovered = { bg = "#1b1c1d", bold = true }
-footer  = { fg = "#a18b7f", bg = "#1b1c1d" }
+on      = { fg = "#ab836c" }
+run    = { fg = "#808796" }
+desc    = { fg = "#68605F" }
+hovered = { bg = "#1F1E1C", bold = true }
+footer  = { fg = "#8a7f76", bg = "#1F1E1C" }
 
 [notify]
-title_info = { fg = "#b0b58a" }
-title_warn = { fg = "#969375" }
-title_error = { fg = "#9e5560" }
+title_info = { fg = "#717d6e" }
+title_warn = { fg = "#AE976D" }
+title_error = { fg = "#D47E7E" }
 
 [filetype]
 rules = [
     # Media
-    { mime = "image/*", fg = "#b0b58a"},
-    { mime = "{audio,video}/*", fg = "#b0b58a"},
+    { mime = "image/*", fg = "#717d6e"},
+    { mime = "{audio,video}/*", fg = "#717d6e"},
 
     # Archives
-    { mime = "application/{,g}zip", fg = "#856b6c"},
-    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#856b6c"},
+    { mime = "application/{,g}zip", fg = "#5A6458"},
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#5A6458"},
 
     # Fallback
-    { name = "*", fg = "#adacac"},
-    { name = "*/", fg = "#8a968f"}
+    { name = "*", fg = "#AEA09F"},
+    { name = "*/", fg = "#b0a582"}
 ]
   

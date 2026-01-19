@@ -1,22 +1,10 @@
-local Util = require("neomodern.util")
-
-local M = {}
-
-function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-    local c = {}
-    for k, v in pairs(colors) do
-        if type(v) == "string" then
-            c[k] = v:gsub("^#", "")
-        end
-    end
-
-    local foot = Util.template(
-        [=[
-# name: ${theme} colors for ${extra}
+---@type neomodern.Extra
+local M = {
+    name = "foot",
+    ext = "ini",
+    url = "https://codeberg.org/dnkl/foot",
+    template = [=[
+# name: ${theme} colors for foot
 # url: ${url}
 # upstream: ${upstream}
 # author: Casey Miller
@@ -27,36 +15,31 @@ color=${fg} ${visual}
 [colors]
 foreground=${fg}
 background=${bg}
-# alternate, darker background=${alt_bg}
 selection-foreground=${fg}
 selection-background=${visual}
-urls=${c04}
+urls=${blue}
 
-regular0=${c00}
-regular1=${c01}
-regular2=${c02}
-regular3=${c03}
-regular4=${c04}
-regular5=${c05}
-regular6=${c06}
-regular7=${c07}
+regular0=${black}
+regular1=${red}
+regular2=${green}
+regular3=${yellow}
+regular4=${blue}
+regular5=${magenta}
+regular6=${cyan}
+regular7=${white}
 
-bright0=${c08}
-bright1=${c09}
-bright2=${c0A}
-bright3=${c0B}
-bright4=${c0C}
-bright5=${c0D}
-bright6=${c0E}
-bright7=${c0F}
+bright0=${bright_black}
+bright1=${bright_red}
+bright2=${bright_green}
+bright3=${bright_yellow}
+bright4=${bright_blue}
+bright5=${bright_magenta}
+bright6=${bright_cyan}
+bright7=${bright_white}
 
 16=${alt_bg}
 17=${alt}
 ]=],
-        c
-    )
-
-    return foot
-end
+}
 
 return M

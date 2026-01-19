@@ -1,0 +1,34 @@
+/* name: moon colors for waybar   */
+/* url: https://github.com/Alexays/Waybar                        */
+/* upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/              */
+/* author: Casey Miller               */
+
+/* 
+1. copy into ~/.config/waybar/
+2. include at the top of your style.css:
+@import "moon.css";
+3. use colors in your style.css, e.g.:
+* {
+color: @func
+}
+*/
+
+@define-color alt #C2C2CF;
+@define-color alt_bg #${alt_bg};
+@define-color bg #111111;
+@define-color comment #4c4c57;
+@define-color constant #b5b3a5;
+@define-color fg #A1A1AC;
+@define-color func #6A6A7A;
+@define-color keyword #858599;
+@define-color line #191919;
+@define-color number #ab836c;
+@define-color operator #575D70;
+@define-color property #817882;
+@define-color string #777d77;
+@define-color type #6d748c;
+@define-color visual #242424;
+@define-color diag_red #DA7F7C;
+@define-color diag_blue #869DDF;
+@define-color diag_yellow #AF9974;
+@define-color diag_green #69896F;

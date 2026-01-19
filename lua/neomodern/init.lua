@@ -1,59 +1,46 @@
+local M = {}
 local Config = require("neomodern.config")
-local M = {
-    ---@type neomodern.Config
-    _opts = {},
-}
 
----Returns an owned copy of the config.
----@return neomodern.Config
-function M.options()
-    return vim.deepcopy(M._opts)
-end
+---@type neomodern.Config
+local opts = Config.default
 
----Toggle between light/dark variants.
-function M.toggle_variant()
-    if vim.o.background == "light" then
-        vim.o.background = "dark"
-        vim.api.nvim_command("colorscheme " .. M._opts.theme)
-    else
-        vim.api.nvim_command("colorscheme neomodern-day")
+---@param theme string?
+local function resolve_theme(theme)
+    theme = theme or opts.theme
+    if require("neomodern.palette").themes[theme] == nil then
+        vim.schedule(function()
+            vim.notify(
+                string.format("Neomodern: unknown theme '%s'", theme),
+                vim.log.levels.WARN,
+                {}
+            )
+        end)
+        theme = Config.default.theme
     end
+    return theme
 end
 
----Apply the colorscheme (same as `:colorscheme neomodern`).
+---Applies the colorscheme (same as `:colorscheme ...`).
+---
+---If `@param theme` is not provided, then uses the value specified in the
+---config table. If overriding the default theme, make sure to call
+---`neomodern.setup(...)` first.
+---
+---Note: enforces `vim.opt.termguicolors=true`.
 ---@param theme string?
 function M.load(theme)
-    M._opts.theme = theme or M._opts.theme
+    opts.theme = resolve_theme(theme)
     vim.cmd("hi clear")
-    if vim.fn.exists("syntax_on") then
-        vim.cmd("syntax reset")
-    end
+    vim.g.colors_name = opts.theme
     vim.o.termguicolors = true
-    vim.g.colors_name = M._opts.theme
-    M._opts.variant = vim.o.background
-    require("neomodern.highlights").setup()
-    if M._opts.term_colors then
-        require("neomodern.palette").set_term_colors({
-            theme = M._opts.theme,
-            variant = M._opts.variant,
-            flat = false,
-        })
-    end
+    require("neomodern.highlights").apply(opts)
 end
 
----Set the config options.
----@param opts neomodern.Config
-function M.setup(opts)
-    ---@type neomodern.Config
-    M._opts = vim.tbl_deep_extend("force", Config.default, opts or {})
-    if M._opts.toggle_variant_key then
-        vim.keymap.set(
-            "n",
-            M._opts.toggle_variant_key,
-            '<cmd>lua require("neomodern").toggle_variant()<cr>',
-            { noremap = true, silent = true }
-        )
-    end
+---Overrides the default configuration. Should be called before
+---`neomodern.load(...)`.
+---@param cfg neomodern.Config
+function M.setup(cfg)
+    opts = vim.tbl_deep_extend("force", opts, cfg or {})
 end
 
 return M

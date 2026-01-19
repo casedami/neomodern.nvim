@@ -1,48 +1,47 @@
 [colors]
-foreground = "#adadcc"
-background = "#121315"
-# background = "#111111" # alternate, darker bg
-cursor_bg = "#adadcc"
-cursor_border = "#666a82"
-cursor_fg = "#121315"
-selection_bg = "#262830"
+foreground = "#C5B6C6"
+background = "#15151a"
+cursor_bg = "#C5B6C6"
+cursor_border = "#67606A"
+cursor_fg = "#15151a"
+selection_bg = "#28282C"
 selection_fg = "#9bbdb8"
-split = "#666a82"
-compose_cursor = "#a8a6f5"
-scrollbar_thumb = "#16171b"
+split = "#67606A"
+compose_cursor = "#9FB6D0"
+scrollbar_thumb = "#1D1D22"
 
-ansi = ["#666a82", "#ba5f60", "#647977", "#c4959c", "#6172A0", "#6C6B9B", "#436285", "#6F6F83"]
-brights = ["#666a82", "#ad82a2", "#9bbdb8", "#d2af98", "#95b1fc", "#a8a6f5", "#6397cf", "#adadcc"]
+ansi = ["#1D1D22", "#9D777D", "#7C9793", "#A18877", "#788CC2", "#8583BC", "#4C6B8D", "#766D77"]
+brights = ["#67606A", "#c4959c", "#9bbdb8", "#c9aa95", "#96aff2", "#a6a4eb", "#5f86b0", "#C5B6C6"]
 
 [colors.tab_bar]
-inactive_tab_edge = "#6F6F83"
-background = "#121315"
+inactive_tab_edge = "#766D77"
+background = "#15151a"
 
 [colors.tab_bar.active_tab]
-fg_color = "#a8a6f5"
-bg_color = "#262830"
+fg_color = "#9FB6D0"
+bg_color = "#28282C"
 
 [colors.tab_bar.inactive_tab]
-fg_color = "#666a82"
-bg_color = "#16171b"
+fg_color = "#67606A"
+bg_color = "#1D1D22"
 
 [colors.tab_bar.inactive_tab_hover]
-fg_color = "#666a82"
-bg_color = "#16171b"
+fg_color = "#67606A"
+bg_color = "#1D1D22"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]
-fg_color = "#a8a6f5"
-bg_color = "#262830"
+fg_color = "#9FB6D0"
+bg_color = "#28282C"
 intensity = "Bold"
 
 [colors.tab_bar.new_tab]
-fg_color = "#a8a6f5"
-bg_color = "#121315"
+fg_color = "#9FB6D0"
+bg_color = "#15151a"
 
 [metadata]
 aliases = []
 name = "roseprime"
 url = "https://wezfurlong.org/wezterm/config/files.html"
-upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/roseprime.toml"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
 author = "Casey Miller"

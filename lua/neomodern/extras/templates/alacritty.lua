@@ -1,63 +1,49 @@
-local M = {}
-local Util = require("neomodern.util")
-
-function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-    local alacritty = Util.template(
-        [=[
-# name: ${theme} colors for ${extra}
+---@type neomodern.Extra
+local M = {
+    name = "alacritty",
+    ext = "toml",
+    url = "https://github.com/alacritty/alacritty",
+    template = [=[
+# name: ${theme} colors for alacritty
 # url: ${url}
 # upstream: ${upstream}
 # author: Casey Miller
 
 # Default colors
 [colors.primary]
-background = '${bg}'
-# alternate, darker background = '${alt_bg}'
-foreground = '${fg}'
+background = '#${bg}'
+foreground = '#${fg}'
 
 #[colors.cursor]
-#cursor = '${fg}'
-#text = '${bg}'
+#cursor = '#${fg}'
+#text = '#${bg}'
 
 # Normal colors
 [colors.normal]
-black = '${c00}'
-red = '${c01}'
-green = '${c02}'
-yellow = '${c03}'
-blue = '${c04}'
-magenta = '${c05}'
-cyan = '${c06}'
-white = '${c07}'
+black = '#${black}'
+red = '#${red}'
+green = '#${green}'
+yellow = '#${yellow}'
+blue = '#${blue}'
+magenta = '#${magenta}'
+cyan = '#${cyan}'
+white = '#${white}'
 
 # Bright colors
 [colors.bright]
-black = '${c08}'
-red = '${c09}'
-green = '${c0A}'
-yellow = '${c0B}'
-blue = '${c0C}'
-magenta = '${c0D}'
-cyan = '${c0E}'
-white = '${c0F}'
+black = '#${bright_black}'
+red = '#${bright_red}'
+green = '#${bright_green}'
+yellow = '#${bright_yellow}'
+blue = '#${bright_blue}'
+magenta = '#${bright_magenta}'
+cyan = '#${bright_cyan}'
+white = '#${bright_white}'
 
-# Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '${alt_bg}'
-
-[[colors.indexed_colors]]
-index = 17
-color = '${alt}'
+color = '#${alt}'
 ]=],
-        colors
-    )
-
-    return alacritty
-end
+}
 
 return M

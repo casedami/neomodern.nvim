@@ -1,48 +1,47 @@
 [colors]
-foreground = "#adacac"
-background = "#161616"
-# background = "#111111" # alternate, darker bg
-cursor_bg = "#adacac"
-cursor_border = "#696969"
-cursor_fg = "#161616"
-selection_bg = "#333333"
+foreground = "#AEA09F"
+background = "#171614"
+cursor_bg = "#AEA09F"
+cursor_border = "#68605F"
+cursor_fg = "#171614"
+selection_bg = "#2A2927"
 selection_fg = "#8a879c"
-split = "#696969"
-compose_cursor = "#a7ab93"
-scrollbar_thumb = "#1b1c1d"
+split = "#68605F"
+compose_cursor = "#8D978B"
+scrollbar_thumb = "#1F1E1C"
 
-ansi = ["#696969", "#9e5560", "#5C635F", "#b0b58a", "#565A63", "#5C5A66", "#695C55", "#717070"]
-brights = ["#696969", "#9c797d", "#8a968f", "#b5ae84", "#808796", "#8a879c", "#a18b7f", "#adacac"]
+ansi = ["#1F1E1C", "#6E665E", "#5A6458", "#8D8468", "#666C78", "#6E6C7D", "#896956", "#68605F"]
+brights = ["#68605F", "#8a7f76", "#717d6e", "#b0a582", "#808796", "#8a879c", "#ab836c", "#AEA09F"]
 
 [colors.tab_bar]
-inactive_tab_edge = "#717070"
-background = "#161616"
+inactive_tab_edge = "#68605F"
+background = "#171614"
 
 [colors.tab_bar.active_tab]
-fg_color = "#a7ab93"
-bg_color = "#333333"
+fg_color = "#8D978B"
+bg_color = "#2A2927"
 
 [colors.tab_bar.inactive_tab]
-fg_color = "#696969"
-bg_color = "#1b1c1d"
+fg_color = "#68605F"
+bg_color = "#1F1E1C"
 
 [colors.tab_bar.inactive_tab_hover]
-fg_color = "#696969"
-bg_color = "#1b1c1d"
+fg_color = "#68605F"
+bg_color = "#1F1E1C"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]
-fg_color = "#a7ab93"
-bg_color = "#333333"
+fg_color = "#8D978B"
+bg_color = "#2A2927"
 intensity = "Bold"
 
 [colors.tab_bar.new_tab]
-fg_color = "#a7ab93"
-bg_color = "#161616"
+fg_color = "#8D978B"
+bg_color = "#171614"
 
 [metadata]
 aliases = []
 name = "hojicha"
 url = "https://wezfurlong.org/wezterm/config/files.html"
-upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/hojicha.toml"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
 author = "Casey Miller"

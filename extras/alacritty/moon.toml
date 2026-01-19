@@ -1,0 +1,39 @@
+# name: moon colors for alacritty
+# url: https://github.com/alacritty/alacritty
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
+# author: Casey Miller
+
+# Default colors
+[colors.primary]
+background = '#111111'
+foreground = '#A1A1AC'
+
+#[colors.cursor]
+#cursor = '#A1A1AC'
+#text = '#111111'
+
+# Normal colors
+[colors.normal]
+black = '#191919'
+red = '#896956'
+green = '#5F645F'
+yellow = '#918F84'
+blue = '#6A6A7A'
+magenta = '#676068'
+cyan = '#575D70'
+white = '#616167'
+
+# Bright colors
+[colors.bright]
+black = '#4c4c57'
+red = '#ab836c'
+green = '#777d77'
+yellow = '#b5b3a5'
+blue = '#858599'
+magenta = '#817882'
+cyan = '#6d748c'
+white = '#A1A1AC'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#C2C2CF'

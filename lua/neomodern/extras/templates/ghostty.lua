@@ -1,46 +1,36 @@
-local Util = require("neomodern.util")
-
-local M = {}
-
-function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-
-    local ghostty = Util.template(
-        [=[
-# name: ${theme} colors for ${extra}
+---@type neomodern.Extra
+local M = {
+    name = "ghostty",
+    ext = nil,
+    url = "https://github.com/ghostty-org/ghostty",
+    template = [=[
+# name: ${theme} colors for ghostty
 # url: ${url}
 # upstream: ${upstream}
 # author: Casey Miller
 
-palette = 0=${c00}
-palette = 1=${c01}
-palette = 2=${c02}
-palette = 3=${c03}
-palette = 4=${c04}
-palette = 5=${c05}
-palette = 6=${c06}
-palette = 7=${c07}
-palette = 8=${c08}
-palette = 9=${c09}
-palette = 10=${c0A}
-palette = 11=${c0B}
-palette = 12=${c0C}
-palette = 13=${c0D}
-palette = 14=${c0E}
-palette = 15=${c0F}
-background = ${bg}
-foreground = ${fg}
-cursor-color = ${fg}
-selection-background = ${visual}
-selection-foreground = ${type}
+palette = 0=#${black}
+palette = 1=#${red}
+palette = 2=#${green}
+palette = 3=#${yellow}
+palette = 4=#${blue}
+palette = 5=#${magenta}
+palette = 6=#${cyan}
+palette = 7=#${white}
+palette = 8=#${bright_black}
+palette = 9=#${bright_red}
+palette = 10=#${bright_green}
+palette = 11=#${bright_yellow}
+palette = 12=#${bright_blue}
+palette = 13=#${bright_magenta}
+palette = 14=#${bright_cyan}
+palette = 15=#${bright_white}
+background = #${bg}
+foreground = #${fg}
+cursor-color = #${fg}
+selection-background = #${visual}
+selection-foreground = #${type}
 ]=],
-        colors
-    )
-
-    return ghostty
-end
+}
 
 return M

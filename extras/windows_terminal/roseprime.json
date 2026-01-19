@@ -1,27 +1,27 @@
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
-    "background": "#121315", // alternate, darker background=#111111
-    "black": "#666a82",
-    "red": "#ba5f60",
-    "green": "#647977",
-    "yellow": "#c4959c"
-    "blue": "#6172A0",
-    "purple": "#6C6B9B",
-    "cyan": "#436285",
-    "white": "#6F6F83",
-    "brightBlack": "#666a82",
-    "brightRed": "#ad82a2",
+    "background": "#15151a",
+    "black": "#1D1D22",
+    "red": "#9D777D",
+    "green": "#7C9793",
+    "yellow": "#A18877"
+    "blue": "#788CC2",
+    "purple": "#8583BC",
+    "cyan": "#4C6B8D",
+    "white": "#766D77",
+    "brightBlack": "#67606A",
+    "brightRed": "#c4959c",
     "brightGreen": "#9bbdb8",
-    "brightYellow": "#d2af98",
-    "brightBlue": "#95b1fc",
-    "brightPurple": "#a8a6f5",
-    "brightCyan": "#6397cf",
-    "brightWhite": "#adadcc",
+    "brightYellow": "#c9aa95",
+    "brightBlue": "#96aff2",
+    "brightPurple": "#a6a4eb",
+    "brightCyan": "#5f86b0",
+    "brightWhite": "#C5B6C6",
 
-    "foreground": "#6F6F83",
-    "selectionBackground": "#262830",
-    "cursorColor": "#adadcc",
+    "foreground": "#766D77",
+    "selectionBackground": "#28282C",
+    "cursorColor": "#C5B6C6",
 
-    "name": "roseprime",
+    "name": "#roseprime",
 }

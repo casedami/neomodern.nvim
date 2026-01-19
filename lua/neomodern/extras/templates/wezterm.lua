@@ -1,68 +1,57 @@
-local Util = require("neomodern.util")
-
-local M = {}
-
-function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-    colors.theme = info.theme
-    colors.theme_lower = string.lower(info.theme)
-    local wezterm = Util.template(
-        [=[
+---@type neomodern.Extra
+local M = {
+    name = "wezterm",
+    ext = "toml",
+    url = "https://wezfurlong.org/wezterm/config/files.html",
+    template = [=[
 [colors]
-foreground = "${fg}"
-background = "${bg}"
-# background = "${alt_bg}" # alternate, darker bg
-cursor_bg = "${fg}"
-cursor_border = "${comment}"
-cursor_fg = "${bg}"
-selection_bg = "${visual}"
-selection_fg = "${type}"
-split = "${comment}"
-compose_cursor = "${alt}"
-scrollbar_thumb = "${line}"
+foreground = "#${fg}"
+background = "#${bg}"
+cursor_bg = "#${fg}"
+cursor_border = "#${comment}"
+cursor_fg = "#${bg}"
+selection_bg = "#${visual}"
+selection_fg = "#${type}"
+split = "#${comment}"
+compose_cursor = "#${alt}"
+scrollbar_thumb = "#${line}"
 
-ansi = ["${c00}", "${c01}", "${c02}", "${c03}", "${c04}", "${c05}", "${c06}", "${c07}"]
-brights = ["${c08}", "${c09}", "${c0A}", "${c0B}", "${c0C}", "${c0D}", "${c0E}", "${c0F}"]
+ansi = ["#${black}", "#${red}", "#${green}", "#${yellow}", "#${blue}", "#${magenta}", "#${cyan}", "#${white}"]
+brights = ["#${bright_black}", "#${bright_red}", "#${bright_green}", "#${bright_yellow}", "#${bright_blue}", "#${bright_magenta}", "#${bright_cyan}", "#${bright_white}"]
 
 [colors.tab_bar]
-inactive_tab_edge = "${c07}"
-background = "${bg}"
+inactive_tab_edge = "#${white}"
+background = "#${bg}"
 
 [colors.tab_bar.active_tab]
-fg_color = "${alt}"
-bg_color = "${visual}"
+fg_color = "#${alt}"
+bg_color = "#${visual}"
 
 [colors.tab_bar.inactive_tab]
-fg_color = "${comment}"
-bg_color = "${line}"
+fg_color = "#${comment}"
+bg_color = "#${line}"
 
 [colors.tab_bar.inactive_tab_hover]
-fg_color = "${comment}"
-bg_color = "${line}"
+fg_color = "#${comment}"
+bg_color = "#${line}"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]
-fg_color = "${alt}"
-bg_color = "${visual}"
+fg_color = "#${alt}"
+bg_color = "#${visual}"
 intensity = "Bold"
 
 [colors.tab_bar.new_tab]
-fg_color = "${alt}"
-bg_color = "${bg}"
+fg_color = "#${alt}"
+bg_color = "#${bg}"
 
 [metadata]
 aliases = []
-name = "${theme_lower}"
+name = "${theme}"
 url = "${url}"
 upstream = "${upstream}"
 author = "Casey Miller"
 ]=],
-        colors
-    )
-    return wezterm
-end
+}
 
 return M

@@ -1,26 +1,26 @@
-# name: ${theme} colors for ${extra}
-# url: ${url}
-# upstream: ${upstream}
+# name: gyokuro colors for ghostty
+# url: https://github.com/ghostty-org/ghostty
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
 # author: Casey Miller
 
-palette = 0=${c00}
-palette = 1=${c01}
-palette = 2=${c02}
-palette = 3=${c03}
-palette = 4=${c04}
-palette = 5=${c05}
-palette = 6=${c06}
-palette = 7=${c07}
-palette = 8=${c08}
-palette = 9=${c09}
-palette = 10=${c0A}
-palette = 11=${c0B}
-palette = 12=${c0C}
-palette = 13=${c0D}
-palette = 14=${c0E}
-palette = 15=${c0F}
-background = ${bg}
-foreground = {$fg}
-cursor-color = {$fg}
-selection-background = ${visual}
-selection-foreground = ${type}
+palette = 0=#232425
+palette = 1=#AB878F
+palette = 2=#61765E
+palette = 3=#857E59
+palette = 4=#5D7285
+palette = 5=#6B7191
+palette = 6=#8D7064
+palette = 7=#696A64
+palette = 8=#6B6B67
+palette = 9=#d6a9b3
+palette = 10=#799475
+palette = 11=#a69e6f
+palette = 12=#748fa6
+palette = 13=#868db5
+palette = 14=#b08c7d
+palette = 15=#AFB0A6
+background = #1b1c1d
+foreground = #AFB0A6
+cursor-color = #AFB0A6
+selection-background = #2D2E2F
+selection-foreground = #AFBFAC

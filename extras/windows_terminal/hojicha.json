@@ -1,27 +1,27 @@
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
-    "background": "#161616", // alternate, darker background=#111111
-    "black": "#696969",
-    "red": "#9e5560",
-    "green": "#5C635F",
-    "yellow": "#b0b58a"
-    "blue": "#565A63",
-    "purple": "#5C5A66",
-    "cyan": "#695C55",
-    "white": "#717070",
-    "brightBlack": "#696969",
-    "brightRed": "#9c797d",
-    "brightGreen": "#8a968f",
-    "brightYellow": "#b5ae84",
+    "background": "#171614",
+    "black": "#1F1E1C",
+    "red": "#6E665E",
+    "green": "#5A6458",
+    "yellow": "#8D8468"
+    "blue": "#666C78",
+    "purple": "#6E6C7D",
+    "cyan": "#896956",
+    "white": "#68605F",
+    "brightBlack": "#68605F",
+    "brightRed": "#8a7f76",
+    "brightGreen": "#717d6e",
+    "brightYellow": "#b0a582",
     "brightBlue": "#808796",
     "brightPurple": "#8a879c",
-    "brightCyan": "#a18b7f",
-    "brightWhite": "#adacac",
+    "brightCyan": "#ab836c",
+    "brightWhite": "#AEA09F",
 
-    "foreground": "#717070",
-    "selectionBackground": "#333333",
-    "cursorColor": "#adacac",
+    "foreground": "#68605F",
+    "selectionBackground": "#2A2927",
+    "cursorColor": "#AEA09F",
 
-    "name": "hojicha",
+    "name": "#hojicha",
 }

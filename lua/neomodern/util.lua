@@ -1,4 +1,6 @@
 local M = {}
+local WHITE = "#FFFFFF"
+local BLACK = "#000000"
 
 ---Translates color from HTML to RGB.
 ---@param color string hex color code
@@ -41,61 +43,12 @@ function M.blend(a, coeff, b)
     )
 end
 
----Generates a light mode variant for a provided theme by inverting colors.
----@param colors neomodern.Theme
----@return neomodern.Theme
-function M.generate_light_variant(colors)
-    local hsluv = require("neomodern.hsluv")
-    local saturation_coeff = 25e-2
-    local brightness_coeff = 1e-4
-    local function invert(cname, cval)
-        if type(cval) == "table" then
-            for k, v in pairs(cval) do
-                cval[k] = invert(k, v)
-            end
-            return cval
-        elseif type(cval) == "string" and cval ~= "none" then
-            local hsl = hsluv.hex_to_hsluv(cval)
-
-            if cname:find("bg$") and hsl[3] < 50 then
-                hsl[3] = 98 - hsl[3]
-                hsl[3] = hsl[3] + (98 - hsl[3]) * brightness_coeff
-            else
-                -- increase saturation
-                hsl[2] = hsl[2] + (100 - hsl[2]) * saturation_coeff
-                hsl[3] = 100 - hsl[3]
-                if hsl[3] < 50 then
-                    -- increase brightness
-                    hsl[3] = hsl[3] + (100 - hsl[3]) * brightness_coeff
-                end
-            end
-            return hsluv.hsluv_to_hex(hsl)
-        end
-    end
-
-    for k, v in pairs(colors) do
-        colors[k] = invert(k, v)
-    end
-    -- alt_bg is always darker than bg, therefore inverting means we need to swap
-    -- afterwards
-    colors["bg"], colors["alt_bg"] = colors["alt_bg"], colors["bg"]
-    return colors
+function M.lighten(a, coeff)
+    return M.blend(WHITE, coeff, a)
 end
 
----Generates a template from a string containing variables of the form $VAR, and a table
----of corresponding replacement variables.
----@param str string template string
----@param table table key value pairs to replace in the string
----@return string
-function M.template(str, table)
-    return (
-        str:gsub("($%b{})", function(w)
-            return vim.tbl_get(
-                table,
-                unpack(vim.split(w:sub(3, -2), ".", { plain = true }))
-            ) or w
-        end)
-    )
+function M.darken(a, coeff)
+    return M.blend(BLACK, coeff, a)
 end
 
 return M

@@ -1,45 +1,39 @@
-# name: GYOKURO colors for Alacritty
+# name: gyokuro colors for alacritty
 # url: https://github.com/alacritty/alacritty
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/alacritty/gyokuro.toml
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
 # author: Casey Miller
 
 # Default colors
 [colors.primary]
 background = '#1b1c1d'
-# alternate, darker background = '#161617'
-foreground = '#bbbac1'
+foreground = '#AFB0A6'
 
 #[colors.cursor]
-#cursor = '#bbbac1'
+#cursor = '#AFB0A6'
 #text = '#1b1c1d'
 
 # Normal colors
 [colors.normal]
-black = '#767777'
-red = '#9e5560'
-green = '#72966c'
-yellow = '#a2ad7b'
-blue = '#50616F'
-magenta = '#8B7177'
-cyan = '#5B6078'
-white = '#7B7B7F'
+black = '#232425'
+red = '#AB878F'
+green = '#61765E'
+yellow = '#857E59'
+blue = '#5D7285'
+magenta = '#6B7191'
+cyan = '#8D7064'
+white = '#696A64'
 
 # Bright colors
 [colors.bright]
-black = '#767777'
-red = '#b08c7d'
-green = '#8bab85'
-yellow = '#bbc7b1'
+black = '#6B6B67'
+red = '#d6a9b3'
+green = '#799475'
+yellow = '#a69e6f'
 blue = '#748fa6'
-magenta = '#d6a9b3'
-cyan = '#868db5'
-white = '#bbbac1'
+magenta = '#868db5'
+cyan = '#b08c7d'
+white = '#AFB0A6'
 
-# Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '#161617'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#a69e6f'
+color = '#94A991'

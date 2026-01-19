@@ -1,29 +1,10 @@
 local M = {}
-local URL = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
+local upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
 
----@alias Extra {name: string, ext:string, url:string, label:string}
+---@alias neomodern.Extra {name: string, ext:string?, url:string, template: string}
 
---- @type table<Extra>
-local extras = {
-    -- stylua: ignore start
-    { name = "alacritty", ext = ".toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty"},
-    { name = "fish", ext = ".fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish"},
-    { name = "fish_themes", ext = ".theme", url = "https://fishshell.com/docs/current/interactive.html#syntax-highlighting", label = "Fish Themes"},
-    { name = "foot", ext = ".ini", url = "https://codeberg.org/dnkl/foot", label = "Foot"},
-    { name = "fzf",  ext = ".zsh", url = "https://github.com/junegunn/fzf", label = "Fzf"},
-    { name = "ghostty",  ext = "", url = "https://github.com/ghostty-org/ghostty", label = "Ghostty"},
-    { name = "hyprland",  ext = ".conf", url = "https://github.com/hyprwm/Hyprland", label = "Hyprland" },
-    { name = "kitty", ext = ".conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty"},
-    { name = "nushell",  ext = ".nu", url = "https://github.com/nushell/nushell", label = "Nushell" },
-    { name = "waybar",  ext = ".css", url = "https://github.com/Alexays/Waybar", label = "Waybar" },
-    { name = "wezterm", ext = ".toml", url = "https://wezfurlong.org/wezterm/config/files.html", label = "WezTerm"},
-    { name = "windows_terminal", ext = ".json", url = "https://aka.ms/terminal-documentation", label = "Windows Terminal"},
-    { name = "yazi",  ext = ".toml", url = "https://github.com/sxyazi/yazi", label = "Yazi"},
-    -- stylua: ignore end
-}
-
----@param contents string file contents (extra theme)
----@param fname string filename to save extra
+---@param contents string
+---@param fname string
 local function write(contents, fname)
     vim.fn.mkdir(vim.fs.dirname("extras/" .. fname), "p")
     local file = io.open("extras/" .. fname, "w")
@@ -33,26 +14,54 @@ local function write(contents, fname)
     end
 end
 
+---@param template string
+---@param replace_dict table
+---@return string
+local function from_template(template, replace_dict)
+    return (
+        template:gsub("($%b{})", function(w)
+            return vim.tbl_get(
+                replace_dict,
+                ---@diagnostic disable-next-line: deprecated
+                unpack(vim.split(w:sub(3, -2), ".", { plain = true }))
+            ) or w
+        end)
+    )
+end
+
+---@param s string
+local function strip_prefix(s)
+    return s:sub(2)
+end
+
 function M.generate()
-    local themes = require("neomodern.palette").themes
-    for _, e in ipairs(extras) do
-        package.loaded["neomodern.extras." .. e.name] = nil
-        local template = require("neomodern.extras.templates." .. e.name)
-        for _, theme in pairs(themes) do
-            local palette = require("neomodern.palette").get({
-                theme = theme,
-                variant = "dark",
-                flat = true,
-            })
-            local fname = e.name .. "/" .. theme .. e.ext
+    local Palette = require("neomodern.palette")
+    local source = debug.getinfo(1).source:sub(2)
+    local templates_dir = vim.fn.fnamemodify(source, ":p:h")
+    local extras = vim.tbl_map(function(p)
+        return vim.fn.fnamemodify(p, ":t:r")
+    end, vim.fn.glob(string.format("%s/templates/*", templates_dir), false, true))
+
+    for _, extra in ipairs(extras) do
+        local e = require("neomodern.extras.templates." .. extra)
+
+        for _, theme in pairs(Palette.themes) do
+            ---@type neomodern.Palette
+            local colors = Palette.get(theme)
+            local replace_dict = vim.tbl_extend(
+                "error",
+                { url = e.url, upstream = upstream, theme = theme },
+                vim.tbl_map(strip_prefix, colors.spec),
+                vim.tbl_map(strip_prefix, colors.base16)
+            )
             write(
-                template.generate(palette, {
-                    extra = e.label,
-                    url = e.url,
-                    upstream = URL .. fname,
-                    theme = string.upper(theme),
-                }),
-                fname
+                from_template(e.template, replace_dict),
+                string.format(
+                    "%s/%s%s",
+                    e.name,
+                    theme,
+                    e.ext and string.format(".%s", e.ext) or ""
+                )
             )
         end
     end

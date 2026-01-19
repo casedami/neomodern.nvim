@@ -1,0 +1,47 @@
+[colors]
+foreground = "#A1A1AC"
+background = "#111111"
+cursor_bg = "#A1A1AC"
+cursor_border = "#4c4c57"
+cursor_fg = "#111111"
+selection_bg = "#242424"
+selection_fg = "#6d748c"
+split = "#4c4c57"
+compose_cursor = "#C2C2CF"
+scrollbar_thumb = "#191919"
+
+ansi = ["#191919", "#896956", "#5F645F", "#918F84", "#6A6A7A", "#676068", "#575D70", "#616167"]
+brights = ["#4c4c57", "#ab836c", "#777d77", "#b5b3a5", "#858599", "#817882", "#6d748c", "#A1A1AC"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#616167"
+background = "#111111"
+
+[colors.tab_bar.active_tab]
+fg_color = "#C2C2CF"
+bg_color = "#242424"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#4c4c57"
+bg_color = "#191919"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#4c4c57"
+bg_color = "#191919"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#C2C2CF"
+bg_color = "#242424"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#C2C2CF"
+bg_color = "#111111"
+
+[metadata]
+aliases = []
+name = "moon"
+url = "https://wezfurlong.org/wezterm/config/files.html"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
+author = "Casey Miller"

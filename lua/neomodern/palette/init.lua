@@ -1,87 +1,180 @@
 local M = {}
 local Util = require("neomodern.util")
 
----@class neomodern.Theme
+---@class neomodern.PrePalette.Base
+---@field black string
+---@field red string
+---@field green string
+---@field yellow string
+---@field blue string
+---@field magenta string
+---@field cyan string
+
+---@class neomodern.PrePalette.Spec
 ---@field alt string highlight
----@field alt_bg string dim alternate background
----@field bg string background
----@field comment string comments
----@field constant string constants
----@field fg string foreground
----@field func string functions
----@field keyword string keywords
----@field line string line highlights: e.g. cursor line
+---@field bg string
+---@field comment string
+---@field constant string
+---@field fg string
+---@field func string
+---@field keyword string
+---@field line string (e.g. cursor line)
 ---@field number string number/boolean
----@field operator string operators
+---@field operator string
 ---@field property string class properties
----@field string string strings
----@field type string types
+---@field string string
+---@field type string
 ---@field visual string visual selection
----@field diag_red string diagnostics red color (e.g. error)
----@field diag_blue string diagnostics blue color (e.g. hint)
----@field diag_yellow string diagnostics yellow color (e.g. warning)
----@field diag_green string diagnostics green color (e.g. diffadd)
----@field colormap nil|neomodern.Theme.Terminal mapping to terminal colors
 
----@class neomodern.Theme.Terminal
----@field c00 string
----@field c01 string
----@field c02 string
----@field c03 string
----@field c04 string
----@field c05 string
----@field c06 string
----@field c07 string
----@field c08 string
----@field c09 string
----@field c0A string
----@field c0B string
----@field c0C string
----@field c0D string
----@field c0E string
----@field c0F string
+---@class neomodern.PrePalette
+---@field base neomodern.PrePalette.Base
+---@field spec neomodern.PrePalette.Spec
 
----@enum Themes
+---@class neomodern.Palette.Base16
+---@field black string
+---@field red string
+---@field green string
+---@field yellow string
+---@field blue string
+---@field magenta string
+---@field cyan string
+---@field white string
+---@field bright_black string
+---@field bright_red string
+---@field bright_green string
+---@field bright_yellow string
+---@field bright_blue string
+---@field bright_magenta string
+---@field bright_cyan string
+---@field bright_white string
+
+---@class neomodern.Palette.Spec
+---@field alt string highlight
+---@field bg string
+---@field comment string
+---@field constant string
+---@field fg string
+---@field func string
+---@field keyword string
+---@field line string (e.g. cursor line)
+---@field number string number/boolean
+---@field operator string
+---@field property string class properties
+---@field string string
+---@field type string
+---@field visual string visual selection
+---@field diag_red string (e.g. error)
+---@field diag_blue string (e.g. hint)
+---@field diag_yellow string (e.g. warning)
+---@field diag_green string (e.g. diffadd)
+
+---@class neomodern.Palette
+---@field base16 neomodern.Palette.Base16
+---@field spec neomodern.Palette.Spec
+
+---@class neomodern.PrePalette.Diagnostics
+---@field diag_red string
+---@field diag_blue string
+---@field diag_yellow string
+---@field diag_green string
+
+---@type neomodern.PrePalette.Diagnostics
+local DiagnosticPalette = {
+    diag_red = "#e67e80",
+    diag_blue = "#86a3f0",
+    diag_yellow = "#ad9368",
+    diag_green = "#658c6d",
+}
+
+---@param colors neomodern.PrePalette
+---@return neomodern.Palette.Base16
+local function generate_base16(colors)
+    return {
+        black = colors.spec.line,
+        red = Util.darken(colors.base.red, 0.2),
+        green = Util.darken(colors.base.green, 0.2),
+        yellow = Util.darken(colors.base.yellow, 0.2),
+        blue = Util.darken(colors.base.blue, 0.2),
+        magenta = Util.darken(colors.base.magenta, 0.2),
+        cyan = Util.darken(colors.base.cyan, 0.2),
+        white = Util.darken(colors.spec.fg, 0.4),
+        bright_black = colors.spec.comment,
+        bright_red = colors.base.red,
+        bright_green = colors.base.green,
+        bright_yellow = colors.base.yellow,
+        bright_blue = colors.base.blue,
+        bright_magenta = colors.base.magenta,
+        bright_cyan = colors.base.cyan,
+        bright_white = colors.spec.fg,
+    }
+end
+
+---@param base neomodern.PrePalette.Base
+---@return neomodern.PrePalette.Diagnostics
+local function generate_diagnostic_colors(base)
+    return {
+        diag_red = Util.blend(DiagnosticPalette.diag_red, 0.8, base.red),
+        diag_blue = Util.blend(DiagnosticPalette.diag_blue, 0.8, base.blue),
+        diag_yellow = Util.blend(DiagnosticPalette.diag_yellow, 0.8, base.yellow),
+        diag_green = Util.blend(DiagnosticPalette.diag_green, 0.8, base.green),
+    }
+end
+
+---@param bg string
+---@param type neomodern.Background
+---@return string
+local function resolve_bg(bg, type)
+    local backgrounds = {
+        default = bg,
+        alt = Util.blend(bg, 0.75, "#000000"),
+        transparent = "none",
+    }
+    local result = type and backgrounds[type] or backgrounds.default
+    if result == nil then
+        vim.schedule(function()
+            vim.notify(
+                string.format("Neomodern: unknown background type -- %s", type),
+                vim.log.levels.WARN,
+                {}
+            )
+        end)
+    end
+    return result or backgrounds.default
+end
+
+---@param theme neomodern.Theme
+---@param bg_type neomodern.Background
+---@param overrides neomodern.DefaultOverride
+---@return neomodern.Palette
+M.get = function(theme, bg_type, overrides)
+    local colors
+    if vim.o.background == "light" then
+        ---@type neomodern.PrePalette
+        colors = require("neomodern.palette.light").get(theme)
+    else
+        ---@type neomodern.PrePalette
+        colors = require("neomodern.palette." .. theme)
+    end
+    colors.spec.bg = resolve_bg(colors.spec.bg, bg_type)
+
+    return {
+        spec = vim.tbl_extend(
+            "force",
+            colors.spec,
+            generate_diagnostic_colors(colors.base),
+            overrides or {}
+        ),
+        base16 = generate_base16(colors),
+    }
+end
+
+---@enum
 M.themes = {
+    moon = "moon",
     iceclimber = "iceclimber",
     gyokuro = "gyokuro",
     hojicha = "hojicha",
     roseprime = "roseprime",
 }
-
-for key, theme in pairs(M.themes) do
-    local palette = require("neomodern.palette." .. theme)
-    palette.dim = Util.blend(palette.bg, 0.9, "#000000")
-    M[key] = palette
-end
-
----@class neomodern.PaletteOpts
----@field theme string
----@field variant string
----@field flat boolean | nil
-
----Returns an owned copy of the light or dark variant of a theme.
----@param opts neomodern.PaletteOpts
-function M.get(opts)
-    local palette
-    if opts.variant == "light" then
-        palette = require("neomodern.palette.day").get()
-    else
-        palette = vim.deepcopy(M[opts.theme])
-    end
-
-    if opts.flat ~= nil and opts.flat then
-        return vim.tbl_deep_extend("force", palette.colormap, palette)
-    end
-    return palette
-end
-
----@param opts neomodern.PaletteOpts
-function M.set_term_colors(opts)
-    local palette = M.get(opts)
-    for i, c in ipairs(palette.colormap) do
-        vim.g["terminal_color_" .. i - 1] = c
-    end
-end
 
 return M

@@ -1,22 +1,10 @@
-local Util = require("neomodern.util")
-
-local M = {}
-
-function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-    local c = {}
-    for k, v in pairs(colors) do
-        if type(v) == "string" then
-            c[k] = v:gsub("^#", "")
-        end
-    end
-
-    local fish = Util.template(
-        [=[
-# name: ${theme} colors for ${extra}
+---@type neomodern.Extra
+local M = {
+    name = "fish",
+    ext = "fish",
+    url = "https://fishshell.com/docs/current/index.html",
+    template = [=[
+# name: ${theme} colors for fish
 # url: ${url}
 # upstream: ${upstream}
 # author: Casey Miller
@@ -24,21 +12,20 @@ function M.generate(colors, info)
 # use in ~/.config/fish/conf.d/
 
 # preferred bg: ${bg}
-# alt background: ${alt_bg}
 
 ### Full palette. 
 ### Colors defined in neomdern/palette/${theme}.lua
-set -g alt ${alt} 
-set -g constant ${constant} 
-set -g comment ${comment} 
-set -g fg ${fg} 
-set -g func ${func} 
-set -g keyword ${keyword} 
-set -g number ${number} 
-set -g operator ${operator} 
-set -g property ${property} 
-set -g str ${string} 
-set -g type ${type} 
+set -g alt ${alt}
+set -g constant ${constant}
+set -g comment ${comment}
+set -g fg ${fg}
+set -g func ${func}
+set -g keyword ${keyword}
+set -g number ${number}
+set -g operator ${operator}
+set -g property ${property}
+set -g str ${string}
+set -g type ${type}
 
 # Syntax Highlighting Colors
 set -g fish_color_normal ${fg}
@@ -71,10 +58,6 @@ set -g fish_pager_color_selected_prefix ${alt}
 set -g fish_pager_color_selected_completion ${alt}
 set -g fish_pager_color_selected_background --background=${line}
 ]=],
-        c
-    )
-
-    return fish
-end
+}
 
 return M

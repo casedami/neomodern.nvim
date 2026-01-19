@@ -1,85 +1,53 @@
 local M = {}
+local lib = require("neomodern.highlights.lib")
 
----@alias Highlight {fg:string, bg:string, sp:string, fmt:string}
+---Searches all subdirectories of
+---<neomodern_dir>/lua/neomodern/highlights/defs/ for lua files and
+---concatanates the results to return a single list of highlight definitions.
+---@param palette neomodern.Palette.Spec
+---@param opts neomodern.Config
+---@return table<string, Highlight>
+local function load_defs(palette, opts)
+    local source = debug.getinfo(1).source:sub(2)
+    local hl_dir = vim.fn.fnamemodify(source, ":p:h")
+    local subdirs = vim.fn.glob(string.format("%s/defs/*", hl_dir), false, true)
+    local result = {}
 
----@param highlights table<string,Highlight>
-local function set_highlights(highlights)
-    for group, hl in pairs(highlights) do
-        vim.api.nvim_command(
-            string.format(
-                "highlight %s guifg=%s guibg=%s guisp=%s gui=%s",
-                group,
-                hl.fg or "none",
-                hl.bg or "none",
-                hl.sp or "none",
-                hl.fmt or "none"
+    for _, subdir in ipairs(subdirs) do
+        for _, fpath in
+            ipairs(vim.fn.glob(string.format("%s/*.lua", subdir), false, true))
+        do
+            result = vim.tbl_extend(
+                "error",
+                result,
+                require(
+                    string.format(
+                        "neomodern.highlights.defs.%s.%s",
+                        vim.fn.fnamemodify(subdir, ":t"),
+                        vim.fn.fnamemodify(fpath, ":t:r")
+                    )
+                ).get(palette, opts)
             )
-        )
-    end
-end
-
----Util for applying custom user colors.
----@param prefix string
----@param color string
----@param palette neomodern.Theme
----@return string
-local function overwrite(prefix, color, palette)
-    if not color then
-        return ""
-    end
-    if color:sub(1, 1) == "$" then
-        local name = color:sub(2, -1)
-        color = palette[name]
-        if not color then
-            vim.schedule(function()
-                vim.notify(
-                    'neomodern.nvim: unknown color "' .. name .. '"',
-                    vim.log.levels.ERROR,
-                    { title = "neomodern.nvim" }
-                )
-            end)
-            return ""
         end
     end
-    return prefix .. "=" .. color
+
+    return result
 end
 
-function M.setup()
-    ---@type neomodern.Config
-    local Config = require("neomodern").options()
-    ---@type neomodern.Theme
-    local palette = require("neomodern.palette").get({
-        theme = Config.theme,
-        variant = Config.variant,
-        flat = false,
-    })
-
-    local VIM = require("neomodern.highlights.vim").get(palette)
-    local SYNTAX = require("neomodern.highlights.syntax").get(palette)
-    local PLUGIN = require("neomodern.highlights.plugin").get(palette)
-
-    set_highlights(VIM)
-    for _, group in pairs(SYNTAX) do
-        set_highlights(group)
-    end
-    for _, group in pairs(PLUGIN) do
-        set_highlights(group)
-    end
-
-    for group, hl in pairs(Config.highlights) do
-        vim.api.nvim_command(
-            string.format(
-                "highlight %s %s %s %s %s",
-                group,
-                overwrite("guifg", hl.fg, palette),
-                overwrite("guibg", hl.bg, palette),
-                overwrite("guisp", hl.sp, palette),
-                overwrite("gui", hl.fmt, palette)
-            )
-        )
-    end
-    if Config.favor_treesitter_hl then
-        vim.highlight.priorities.semantic_tokens = 95
+---@param opts neomodern.Config
+function M.apply(opts)
+    ---@type neomodern.Palette.Spec
+    local palette = require("neomodern.palette").get(
+        opts.theme,
+        opts.background,
+        opts.overrides.default
+    ).spec
+    local neomodern = load_defs(palette, opts)
+    for group, hl in pairs(neomodern) do
+        if opts.overrides.hlgroups[group] ~= nil then
+            hl = lib.overwrite(hl, opts.overrides.hlgroups[group], palette)
+        end
+        vim.api.nvim_command(lib.to_str(group, hl))
     end
 end
 
