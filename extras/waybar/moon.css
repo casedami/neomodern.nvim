@@ -14,7 +14,6 @@ color: @func
 */
 
 @define-color alt #C2C2CF;
-@define-color alt_bg #${alt_bg};
 @define-color bg #111111;
 @define-color comment #4c4c57;
 @define-color constant #b5b3a5;

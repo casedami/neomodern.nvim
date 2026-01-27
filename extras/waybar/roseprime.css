@@ -14,20 +14,19 @@ color: @func
 */
 
 @define-color alt #9FB6D0;
-@define-color alt_bg #${alt_bg};
-@define-color bg #15151a;
-@define-color comment #67606A;
+@define-color bg #141517;
+@define-color comment #666068;
 @define-color constant #96aff2;
-@define-color fg #C5B6C6;
+@define-color fg #C4B6C5;
 @define-color func #c4959c;
 @define-color keyword #5f86b0;
-@define-color line #1D1D22;
+@define-color line #1C1D1F;
 @define-color number #A18877;
 @define-color operator #9594D4;
 @define-color property #9D777D;
 @define-color string #c9aa95;
 @define-color type #9bbdb8;
-@define-color visual #28282C;
+@define-color visual #27282A;
 @define-color diag_red #DF8386;
 @define-color diag_blue #89A5F0;
 @define-color diag_yellow #B39871;
