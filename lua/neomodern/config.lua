@@ -1,16 +1,8 @@
 local M = {}
 
----@alias neomodern.Background
----| "default"
----| "alt"
----| "transparent"
+---@alias neomodern.Background "default" | "alt" | "transparent"
 
----@alias neomodern.Theme
----| "moon"
----| "iceclimber"
----| "gyokuro"
----| "hojicha"
----| "roseprime"
+---@alias neomodern.Theme "moon" | "iceclimber" | "gyokuro" | "hojicha" | "roseprime"
 
 ---@alias neomodern.GutterSpec { cursorline: boolean, dark: boolean }
 

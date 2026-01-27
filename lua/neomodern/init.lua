@@ -1,3 +1,6 @@
+---@about Neomodern.nvim
+---A collection of modern, simple, unintrusive themes.
+
 local M = {}
 local Config = require("neomodern.config")
 

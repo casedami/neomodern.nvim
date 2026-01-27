@@ -22,9 +22,9 @@ modern — simple — unintrusive
 
 ## Gallery
 
-### MOON
+### 🌚 MOON
 
-A spacy-moon inspired theme
+A spacy, moon inspired theme
 
 <details open>
 <summary>Dark Variant</summary>
@@ -134,16 +134,16 @@ require("neomodern").load("iceclimber")
 
 ## Configuration
 
-There are 4 themes included, each with a light and dark variant.
+There are 5 themes included, each with a light and dark variant.
 The light theme is used when `vim.o.background = "light"`.
 
 Default options are given below:
 
 ```lua
 require("neomodern").setup({
-  -- 'default' := default background
-  -- 'alt' := darker background
-  -- 'transparent' := background is not set
+  -- 'default' default background
+  -- 'alt' darker background
+  -- 'transparent' background is not set
   bg = "default",
 
   theme = "moon", -- 'moon' | 'iceclimber' | 'gyokuro' | 'hojicha' | 'roseprime'
@@ -154,12 +154,12 @@ require("neomodern").setup({
   },
 
   diagnostics = {
-    darker = true, -- Darker colors for diagnostic
-    undercurl = true, -- Use undercurl for diagnostics
-    background = true, -- Use background color for virtual text
+    darker = true, -- use darker colors for diagnostics
+    undercurl = true, -- use undercurl for diagnostics
+    background = true, -- use a background color for diagnostics
   },
 
-  -- override colors, see Customization below
+  -- override colors, see #Customization below
   overrides = {
     default = {},
     hlgroups = {}
@@ -171,15 +171,17 @@ require("neomodern").load()
 
 ## Customization
 
-Neomodern supports user-defined colors overrides. The user can either override
-the default colors or alter the highlights of a specific highlight group.
-See `:h highlight-args` for accepted values for the `hlgroups` overrides.
+Neomodern supports user-defined color overrides. The user can either override
+the default colors or alter the highlights of a specific highlight group. When
+overriding highlight groups, use neomodern's colors by prefixing the color name
+with a dollar sign (e.g. `$keyword`). See `:h highlight-args` and `:h
+neomodern-types` for expected args, default color names, etc.
 
 ```lua
 require("neomodern").setup {
   overrides = {
     default = {
-      keyword = '#817faf', -- redefine the keyword color
+      keyword = '#817faf', -- redefine neomodern's `keyword` color
     }
     hlgroups = {
       ["@keyword.return"] = { gui = 'italic' },
@@ -189,31 +191,6 @@ require("neomodern").setup {
     }
   },
 }
-```
-
-Default colors names are defined in the following class, (see `:h
-neomodern-classes`:
-
-```lua
----@class neomodern.Palette.Spec
----@field alt string highlight
----@field bg string
----@field comment string
----@field constant string
----@field fg string
----@field func string
----@field keyword string
----@field line string (e.g. cursor line)
----@field number string number/boolean
----@field operator string
----@field property string class properties
----@field string string
----@field type string
----@field visual string visual selection
----@field diag_red string (e.g. error)
----@field diag_blue string (e.g. hint)
----@field diag_yellow string (e.g. warning)
----@field diag_green string (e.g. diffadd)
 ```
 
 ## Recipes
