@@ -1,7 +1,7 @@
 local M = {}
 local Util = require("neomodern.util")
 
-M.get = function(palette, _)
+M.get = function(palette, _, _)
     return {
         ["@lsp.typemod.variable.global"] = {
             guifg = Util.blend(palette.constant, 0.8, palette.bg),

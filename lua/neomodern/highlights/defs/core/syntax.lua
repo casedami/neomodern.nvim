@@ -1,7 +1,7 @@
 local M = {}
 local Util = require("neomodern.util")
 
-M.get = function(palette, _)
+M.get = function(palette, _, _)
     return {
         Boolean = { guifg = palette.number },
         Character = { guifg = palette.string },

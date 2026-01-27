@@ -1,8 +1,8 @@
 local M = {}
 local Util = require("neomodern.util")
 
-M.get = function(palette, opts)
-    local darkgutter = Util.blend(palette.bg, 0.85, "#000000")
+M.get = function(palette, base16, opts)
+    local darkgutter = Util.darken(palette.bg, 0.15)
 
     return {
         ColorColumn = { guibg = palette.line },
@@ -40,7 +40,7 @@ M.get = function(palette, opts)
             guibg = Util.blend(palette.diag_blue, 0.1, palette.bg),
             guifg = palette.diag_blue,
         },
-        Directory = { guifg = palette.string },
+        Directory = { guifg = base16.blue },
         ErrorMsg = { guifg = palette.diag_red, gui = "bold" },
         EndOfBuffer = { guifg = palette.comment },
         FloatBorder = {
@@ -88,7 +88,7 @@ M.get = function(palette, opts)
         PmenuThumb = { guibg = palette.visual },
         Question = { guifg = palette.constant },
         QuickFixLine = { guifg = palette.func, gui = "underline" },
-        Search = { guifg = palette.diag_blue, guibg = palette.visual },
+        Search = { guifg = palette.alt, guibg = palette.visual },
         SignColumn = {
             guifg = palette.fg,
             guibg = opts.gutter.dark and darkgutter or palette.bg,
@@ -105,7 +105,7 @@ M.get = function(palette, opts)
         Substitute = { guifg = palette.type, guibg = palette.visual },
         TabLine = { guifg = palette.comment, guibg = palette.line },
         TabLineFill = { guifg = palette.comment, guibg = palette.line },
-        TabLineSel = { guifg = palette.diag_blue, guibg = palette.visual },
+        TabLineSel = { guifg = palette.alt, guibg = palette.visual },
         Terminal = { guifg = palette.fg, guibg = palette.bg },
         ToolbarButton = { guifg = palette.bg, guibg = palette.visual },
         ToolbarLine = { guifg = palette.fg },
@@ -114,7 +114,7 @@ M.get = function(palette, opts)
         WarningMsg = { guifg = palette.diag_yellow, gui = "bold" },
         Whitespace = { guifg = palette.comment },
         WildMenu = {
-            guifg = palette.diag_blue,
+            guifg = palette.alt,
             guibg = Util.blend(palette.diag_blue, 0.1, palette.bg),
         },
         WinSeparator = { guifg = palette.operator },

@@ -1,6 +1,6 @@
 local M = {}
 
-M.get = function(palette, _)
+M.get = function(palette, _, _)
     return {
         FzfLuaBorder = { guifg = palette.operator },
         FzfLuaBufFlagCur = { guifg = palette.alt },

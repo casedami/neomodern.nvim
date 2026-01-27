@@ -1,7 +1,7 @@
 local M = {}
 local Util = require("neomodern.util")
 
-M.get = function(palette, opts)
+M.get = function(palette, _, opts)
     return {
         DiagnosticError = { guifg = palette.diag_red },
         DiagnosticHint = { guifg = palette.diag_blue },

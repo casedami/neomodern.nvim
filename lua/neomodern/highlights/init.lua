@@ -4,7 +4,7 @@ local lib = require("neomodern.highlights.lib")
 ---Searches all subdirectories of
 ---<neomodern_dir>/lua/neomodern/highlights/defs/ for lua files and
 ---concatanates the results to return a single list of highlight definitions.
----@param palette neomodern.Palette.Spec
+---@param palette neomodern.Palette
 ---@param opts neomodern.Config
 ---@return table<string, Highlight>
 local function load_defs(palette, opts)
@@ -26,7 +26,7 @@ local function load_defs(palette, opts)
                         vim.fn.fnamemodify(subdir, ":t"),
                         vim.fn.fnamemodify(fpath, ":t:r")
                     )
-                ).get(palette, opts)
+                ).get(palette.spec, palette.base16, opts)
             )
         end
     end
@@ -36,16 +36,16 @@ end
 
 ---@param opts neomodern.Config
 function M.apply(opts)
-    ---@type neomodern.Palette.Spec
+    ---@type neomodern.Palette
     local palette = require("neomodern.palette").get(
         opts.theme,
         opts.background,
         opts.overrides.default
-    ).spec
+    )
     local neomodern = load_defs(palette, opts)
     for group, hl in pairs(neomodern) do
         if opts.overrides.hlgroups[group] ~= nil then
-            hl = lib.overwrite(hl, opts.overrides.hlgroups[group], palette)
+            hl = lib.overwrite(hl, opts.overrides.hlgroups[group], palette.spec)
         end
         vim.api.nvim_command(lib.to_str(group, hl))
     end

@@ -1,6 +1,6 @@
 local M = {}
 
-M.get = function(palette, _)
+M.get = function(palette, _, _)
     return {
         NvimTreeNormal = { guifg = palette.fg, guibg = palette.bg },
         NvimTreeVertSplit = { guifg = palette.line, guibg = palette.bg },

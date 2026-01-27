@@ -1,6 +1,6 @@
 local M = {}
 
-M.get = function(palette, _)
+M.get = function(palette, _, _)
     return {
         IndentBlanklineIndent1 = { guifg = palette.func },
         IndentBlanklineIndent2 = { guifg = palette.fg },

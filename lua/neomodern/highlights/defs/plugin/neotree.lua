@@ -1,6 +1,6 @@
 local M = {}
 
-M.get = function(palette, _)
+M.get = function(palette, _, _)
     return {
         NeoTreeNormal = { guifg = palette.fg, guibg = palette.bg },
         NeoTreeNormalNC = { guifg = palette.fg, guibg = palette.bg },
