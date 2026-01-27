@@ -6,9 +6,6 @@
 [mgr]
 cwd = { fg = "#87a1e6" }
 
-hovered         = { fg = "#${}", bg = "#1F1F21" }
-preview_hovered = { fg = "#B9B8E3", bg = "#1F1F21" }
-
 find_keyword  = { fg = "#cf9dbd", italic = true }
 find_position = { fg = "#cf9dbd", bg = "reset", italic = true }
 
@@ -27,6 +24,11 @@ count_selected = { fg = "#ABBDEE", italic = true, blink = true }
 
 border_symbol = "│"
 border_style  = { fg = "#61616A" }
+
+[indicator]
+current     = { fg = "#ABBDEE", bg = "#1F1F21" }
+parent      = { fg = "#B9B8E3", bg = "#1F1F21" }
+preview     = { fg = "#B9B8E3", bg = "#1F1F21" }
 
 [mode]
 normal_main   = { fg = "#171719", bg = "#8a88d1" }
