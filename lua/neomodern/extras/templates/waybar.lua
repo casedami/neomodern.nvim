@@ -20,7 +20,6 @@ color: @func
 */
 
 @define-color alt #${alt};
-@define-color alt_bg #${alt_bg};
 @define-color bg #${bg};
 @define-color comment #${comment};
 @define-color constant #${constant};

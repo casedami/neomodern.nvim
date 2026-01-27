@@ -9,10 +9,8 @@ local M = {
 # upstream: ${upstream}
 # author: Casey Miller
 
-[cursor]
-color=${fg} ${visual}
-
 [colors]
+cursor=${fg} ${visual}
 foreground=${fg}
 background=${bg}
 selection-foreground=${fg}
@@ -37,8 +35,7 @@ bright5=${bright_magenta}
 bright6=${bright_cyan}
 bright7=${bright_white}
 
-16=${alt_bg}
-17=${alt}
+16=${alt}
 ]=],
 }
 

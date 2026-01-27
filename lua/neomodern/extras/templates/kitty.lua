@@ -49,10 +49,6 @@ color12 #${bright_blue}
 color13 #${bright_magenta}
 color14 #${bright_cyan}
 color15 #${bright_white}
-
-# extended colors
-color16 #${alt_bg}
-color17 #${alt}
 ]=],
 }
 

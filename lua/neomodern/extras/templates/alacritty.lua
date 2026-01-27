@@ -39,10 +39,6 @@ blue = '#${bright_blue}'
 magenta = '#${bright_magenta}'
 cyan = '#${bright_cyan}'
 white = '#${bright_white}'
-
-[[colors.indexed_colors]]
-index = 16
-color = '#${alt}'
 ]=],
 }
 
