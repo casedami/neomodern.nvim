@@ -6,7 +6,7 @@
 [mgr]
 cwd = { fg = "#61765E" }
 
-hovered         = { fg = "#AFBFAC", bg = "#232425" }
+hovered         = { fg = "#${}", bg = "#232425" }
 preview_hovered = { fg = "#AFBFAC", bg = "#232425" }
 
 find_keyword  = { fg = "#748fa6", italic = true }
@@ -105,7 +105,7 @@ rules = [
     { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#b08c7d"},
 
     # Fallback
-    { name = "*", fg = "#AFB0A6"},
-    { name = "*/", fg = "#a69e6f"}
+    { url = "*", fg = "#AFB0A6"},
+    { url = "*/", fg = "#5D7285"}
 ]
   
