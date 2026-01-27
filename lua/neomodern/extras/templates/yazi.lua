@@ -11,7 +11,7 @@ local M = {
 [mgr]
 cwd = { fg = "#${func}" }
 
-hovered         = { fg = "#${type}", bg = "#${line}" }
+hovered         = { fg = "#${}", bg = "#${line}" }
 preview_hovered = { fg = "#${type}", bg = "#${line}" }
 
 find_keyword  = { fg = "#${property}", italic = true }
@@ -110,8 +110,8 @@ rules = [
     { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${operator}"},
 
     # Fallback
-    { name = "*", fg = "#${fg}"},
-    { name = "*/", fg = "#${string}"}
+    { url = "*", fg = "#${fg}"},
+    { url = "*/", fg = "#${blue}"}
 ]
   ]=],
 }
