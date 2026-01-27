@@ -11,9 +11,6 @@ local M = {
 [mgr]
 cwd = { fg = "#${func}" }
 
-hovered         = { fg = "#${}", bg = "#${line}" }
-preview_hovered = { fg = "#${type}", bg = "#${line}" }
-
 find_keyword  = { fg = "#${property}", italic = true }
 find_position = { fg = "#${property}", bg = "reset", italic = true }
 
@@ -32,6 +29,11 @@ count_selected = { fg = "#${alt}", italic = true, blink = true }
 
 border_symbol = "│"
 border_style  = { fg = "#${comment}" }
+
+[indicator]
+current     = { fg = "#${alt}", bg = "#${line}" }
+parent      = { fg = "#${type}", bg = "#${line}" }
+preview     = { fg = "#${type}", bg = "#${line}" }
 
 [mode]
 normal_main   = { fg = "#${bg}", bg = "#${keyword}" }
