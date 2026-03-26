@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "wezterm",
-    ext = "toml",
-    url = "https://wezfurlong.org/wezterm/config/files.html",
-    template = [=[
+	name = "wezterm",
+	ext = "toml",
+	url = "https://wezfurlong.org/wezterm/config/files.html",
+	template = [=[
 [colors]
 foreground = "#${fg}"
 background = "#${bg}"

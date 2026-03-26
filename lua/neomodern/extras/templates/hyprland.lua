@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "hyprland",
-    ext = "conf",
-    url = "https://github.com/hyprwm/Hyprland",
-    template = [=[
+	name = "hyprland",
+	ext = "conf",
+	url = "https://github.com/hyprwm/Hyprland",
+	template = [=[
 # name: ${theme} colors for hyprland
 # url: ${url}                        
 # upstream: ${upstream}              

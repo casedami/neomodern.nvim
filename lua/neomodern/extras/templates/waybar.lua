@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "waybar",
-    ext = "css",
-    url = "https://github.com/Alexays/Waybar",
-    template = [=[
+	name = "waybar",
+	ext = "css",
+	url = "https://github.com/Alexays/Waybar",
+	template = [=[
 /* name: ${theme} colors for waybar   */
 /* url: ${url}                        */
 /* upstream: ${upstream}              */

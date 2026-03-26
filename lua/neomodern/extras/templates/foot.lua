@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "foot",
-    ext = "ini",
-    url = "https://codeberg.org/dnkl/foot",
-    template = [=[
+	name = "foot",
+	ext = "ini",
+	url = "https://codeberg.org/dnkl/foot",
+	template = [=[
 # name: ${theme} colors for foot
 # url: ${url}
 # upstream: ${upstream}

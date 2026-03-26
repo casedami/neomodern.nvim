@@ -1,8 +1,8 @@
 local M = {
-    name = "yazi",
-    ext = "toml",
-    url = "https://github.com/sxyazi/yazi",
-    template = [=[
+	name = "yazi",
+	ext = "toml",
+	url = "https://github.com/sxyazi/yazi",
+	template = [=[
 # name: ${theme} colors for yazi
 # url: ${url}
 # upstream: ${upstream}

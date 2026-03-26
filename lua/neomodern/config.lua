@@ -23,25 +23,25 @@ local M = {}
 ---@field overrides? neomodern.Overrides
 ---@field theme? neomodern.Theme
 M.default = {
-    background = "default", -- "alt", "transparent"
+	background = "default", -- "alt", "transparent"
 
-    gutter = {
-        cursorline = false,
-        dark = false,
-    },
+	gutter = {
+		cursorline = false,
+		dark = false,
+	},
 
-    diagnostics = {
-        darker = true,
-        undercurl = true,
-        background = true,
-    },
+	diagnostics = {
+		darker = true,
+		undercurl = true,
+		background = true,
+	},
 
-    overrides = {
-        default = {},
-        hlgroups = {},
-    },
+	overrides = {
+		default = {},
+		hlgroups = {},
+	},
 
-    theme = "moon",
+	theme = "moon",
 }
 
 return M

@@ -3,19 +3,19 @@ local Util = require("neomodern.util")
 local M = {}
 
 function M.generate(colors, info)
-    colors.extra = info.extra
-    colors.url = info.url
-    colors.upstream = info.upstream
-    colors.theme = info.theme
-    local c = {}
-    for k, v in pairs(colors) do
-        if type(v) == "string" then
-            c[k] = v:gsub("^#", "")
-        end
-    end
+	colors.extra = info.extra
+	colors.url = info.url
+	colors.upstream = info.upstream
+	colors.theme = info.theme
+	local c = {}
+	for k, v in pairs(colors) do
+		if type(v) == "string" then
+			c[k] = v:gsub("^#", "")
+		end
+	end
 
-    local fish = Util.template(
-        [=[
+	local fish = Util.template(
+		[=[
 # name: ${theme} colors for ${extra}
 # url: ${url}
 # upstream: ${upstream}
@@ -55,10 +55,10 @@ set -g fish_pager_color_selected_prefix ${alt}
 set -g fish_pager_color_selected_completion ${alt}
 set -g fish_pager_color_selected_background --background=${line}
 ]=],
-        c
-    )
+		c
+	)
 
-    return fish
+	return fish
 end
 
 return M

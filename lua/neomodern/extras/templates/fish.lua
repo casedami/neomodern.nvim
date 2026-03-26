@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "fish",
-    ext = "fish",
-    url = "https://fishshell.com/docs/current/index.html",
-    template = [=[
+	name = "fish",
+	ext = "fish",
+	url = "https://fishshell.com/docs/current/index.html",
+	template = [=[
 # name: ${theme} colors for fish
 # url: ${url}
 # upstream: ${upstream}

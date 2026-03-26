@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "ghostty",
-    ext = nil,
-    url = "https://github.com/ghostty-org/ghostty",
-    template = [=[
+	name = "ghostty",
+	ext = nil,
+	url = "https://github.com/ghostty-org/ghostty",
+	template = [=[
 # name: ${theme} colors for ghostty
 # url: ${url}
 # upstream: ${upstream}

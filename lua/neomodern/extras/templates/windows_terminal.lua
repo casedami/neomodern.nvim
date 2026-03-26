@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "windows_terminal",
-    ext = "json",
-    url = "https://aka.ms/terminal-documentation",
-    template = [=[
+	name = "windows_terminal",
+	ext = "json",
+	url = "https://aka.ms/terminal-documentation",
+	template = [=[
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {

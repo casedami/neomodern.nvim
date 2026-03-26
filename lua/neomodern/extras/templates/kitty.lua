@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "kitty",
-    ext = "conf",
-    url = "https://sw.kovidgoyal.net/kitty/conf.html",
-    template = [=[
+	name = "kitty",
+	ext = "conf",
+	url = "https://sw.kovidgoyal.net/kitty/conf.html",
+	template = [=[
 # vim:ft=kitty
 
 # name: ${theme} colors for kitty

@@ -1,9 +1,9 @@
 ---@type neomodern.Extra
 local M = {
-    name = "nushell",
-    ext = "nu",
-    url = "https://github.com/nushell/nushell",
-    template = [=[
+	name = "nushell",
+	ext = "nu",
+	url = "https://github.com/nushell/nushell",
+	template = [=[
 # name: ${theme} colors for nushell
 # url: ${url}
 # upstream: ${upstream}
