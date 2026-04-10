@@ -34,7 +34,7 @@ M.get = function(palette, base16, opts)
 		},
 		Directory = { guifg = base16.blue },
 		ErrorMsg = { guifg = palette.diag_red, gui = "bold" },
-		EndOfBuffer = { guifg = palette.type },
+		EndOfBuffer = { guifg = palette.operator },
 		FloatBorder = {
 			guifg = palette.operator,
 			guibg = palette.bg,
