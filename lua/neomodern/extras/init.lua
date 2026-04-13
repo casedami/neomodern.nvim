@@ -47,7 +47,7 @@ function M.generate()
 
 		for _, theme in pairs(Palette.themes) do
 			---@type neomodern.Palette
-			local colors = Palette.get(theme)
+			local colors = Palette.get(theme, "default", {})
 			local replace_dict = vim.tbl_extend(
 				"error",
 				{ url = e.url, upstream = upstream, theme = theme },

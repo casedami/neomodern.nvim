@@ -13,10 +13,10 @@ color: @func
 }
 */
 
-@define-color alt #8D978B;
+@define-color alt #717d6e;
 @define-color bg #171614;
-@define-color comment #68605F;
-@define-color constant #717d6e;
+@define-color comment #4f4c4c;
+@define-color constant #9e6057;
 @define-color fg #AEA09F;
 @define-color func #6E665E;
 @define-color keyword #8a7f76;
@@ -27,7 +27,7 @@ color: @func
 @define-color string #b0a582;
 @define-color type #8a879c;
 @define-color visual #2A2927;
-@define-color diag_red #D47E7E;
+@define-color diag_red #D87878;
 @define-color diag_blue #859DDE;
 @define-color diag_yellow #AE976D;
 @define-color diag_green #67896D;

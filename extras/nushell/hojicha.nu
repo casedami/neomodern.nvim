@@ -8,10 +8,10 @@
 #       source ~/.config/nushell/themes/hojicha.nu
 
 let theme = {
-alt: "#8D978B",
+alt: "#717d6e",
 bg: "#171614",
-comment: "#68605F",
-constant: "#717d6e",
+comment: "#4f4c4c",
+constant: "#9e6057",
 fg: "#AEA09F",
 func: "#6E665E",
 keyword: "#8a7f76",
@@ -22,7 +22,7 @@ property: "#808796",
 string: "#b0a582",
 type: "#8a879c",
 visual: "#2A2927",
-diag_red: "#D47E7E",
+diag_red: "#D87878",
 diag_blue: "#859DDE",
 diag_yellow: "#AE976D",
 diag_green: "#67896D",
@@ -64,7 +64,7 @@ shape_externalarg: $theme.alt
 shape_filepath: $theme.type
 shape_flag: { fg: $theme.alt attr: b }
 shape_float: $theme.number
-shape_garbage: { fg: $theme.fg bg: "#D47E7E" attr: b }
+shape_garbage: { fg: $theme.fg bg: "#D87878" attr: b }
 shape_globpattern: { fg: $theme.type attr: b }
 shape_int: $theme.number
 shape_internalcall: $theme.func

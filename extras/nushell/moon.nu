@@ -8,22 +8,22 @@
 #       source ~/.config/nushell/themes/moon.nu
 
 let theme = {
-alt: "#C2C2CF",
-bg: "#111111",
+alt: "#C3C3D0",
+bg: "#151515",
 comment: "#4c4c57",
 constant: "#b5b3a5",
-fg: "#A1A1AC",
-func: "#6A6A7A",
-keyword: "#858599",
-line: "#191919",
-number: "#ab836c",
+fg: "#A2A2AD",
+func: "#626E85",
+keyword: "#7a8aa6",
+line: "#1D1D1D",
+number: "#b39066",
 operator: "#575D70",
 property: "#817882",
 string: "#777d77",
 type: "#6d748c",
-visual: "#242424",
-diag_red: "#DA7F7C",
-diag_blue: "#869DDF",
+visual: "#282828",
+diag_red: "#DC827B",
+diag_blue: "#849EE1",
 diag_yellow: "#AF9974",
 diag_green: "#69896F",
 }
@@ -64,7 +64,7 @@ shape_externalarg: $theme.alt
 shape_filepath: $theme.type
 shape_flag: { fg: $theme.alt attr: b }
 shape_float: $theme.number
-shape_garbage: { fg: $theme.fg bg: "#DA7F7C" attr: b }
+shape_garbage: { fg: $theme.fg bg: "#DC827B" attr: b }
 shape_globpattern: { fg: $theme.type attr: b }
 shape_int: $theme.number
 shape_internalcall: $theme.func

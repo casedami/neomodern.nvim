@@ -4,66 +4,66 @@
 # author: Casey Miller
 
 [mgr]
-cwd = { fg = "#6A6A7A" }
+cwd = { fg = "#626E85" }
 
 find_keyword  = { fg = "#817882", italic = true }
 find_position = { fg = "#817882", bg = "reset", italic = true }
 
-marker_copied   = { fg = "#ab836c", bg = "#ab836c" }
-marker_cut      = { fg = "#DA7F7C", bg = "#DA7F7C", crossed = true }
-marker_marked   = { bg = "#C2C2CF", blink = true }
-marker_selected = { bg = "#C2C2CF", blink = true }
+marker_copied   = { fg = "#b39066", bg = "#b39066" }
+marker_cut      = { fg = "#DC827B", bg = "#DC827B", crossed = true }
+marker_marked   = { bg = "#C3C3D0", blink = true }
+marker_selected = { bg = "#C3C3D0", blink = true }
 
-tab_active   = { fg = "#b5b3a5", bg = "#191919", bold = true, reversed = true }
-tab_inactive = { fg = "#4c4c57", bg = "#191919" }
+tab_active   = { fg = "#b5b3a5", bg = "#1D1D1D", bold = true, reversed = true }
+tab_inactive = { fg = "#4c4c57", bg = "#1D1D1D" }
 tab_width    = 1
 
-count_cut      = { fg = "#DA7F7C" }
-count_copied   = { fg = "#ab836c" }
-count_selected = { fg = "#C2C2CF", italic = true, blink = true }
+count_cut      = { fg = "#DC827B" }
+count_copied   = { fg = "#b39066" }
+count_selected = { fg = "#C3C3D0", italic = true, blink = true }
 
 border_symbol = "│"
 border_style  = { fg = "#4c4c57" }
 
 [indicator]
-current     = { fg = "#C2C2CF", bg = "#191919" }
-parent      = { fg = "#6d748c", bg = "#191919" }
-preview     = { fg = "#6d748c", bg = "#191919" }
+current     = { fg = "#C3C3D0", bg = "#1D1D1D" }
+parent      = { fg = "#6d748c", bg = "#1D1D1D" }
+preview     = { fg = "#6d748c", bg = "#1D1D1D" }
 
 [mode]
-normal_main   = { fg = "#111111", bg = "#858599" }
-normal_alt    = { fg = "#111111", bg = "#858599" }
-select_main   = { fg = "#111111", bg = "#C2C2CF" }
-select_alt    = { fg = "#111111", bg = "#C2C2CF" }
-unset_main    = { fg = "#111111", bg = "#817882" }
-unset_alt     = { fg = "#111111", bg = "#817882" }
+normal_main   = { fg = "#151515", bg = "#7a8aa6" }
+normal_alt    = { fg = "#151515", bg = "#7a8aa6" }
+select_main   = { fg = "#151515", bg = "#C3C3D0" }
+select_alt    = { fg = "#151515", bg = "#C3C3D0" }
+unset_main    = { fg = "#151515", bg = "#817882" }
+unset_alt     = { fg = "#151515", bg = "#817882" }
 
 [status]
-overall = {  fg = "#4c4c57", bg = "#111111", bold = true }
+overall = {  fg = "#4c4c57", bg = "#151515", bold = true }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-progress_label  = { fg = "#b5b3a5", bg = "#242424" }
-progress_normal = { fg = "#b5b3a5", bg = "#242424" }
-progress_error  = { fg = "#DA7F7C", bg = "#242424" }
+progress_label  = { fg = "#b5b3a5", bg = "#282828" }
+progress_normal = { fg = "#b5b3a5", bg = "#282828" }
+progress_error  = { fg = "#DC827B", bg = "#282828" }
 
 permissions_t = { fg = "#6d748c" }
 permissions_r = { fg = "#817882" }
-permissions_w = { fg = "#858599" }
-permissions_x = { fg = "#6A6A7A" }
+permissions_w = { fg = "#7a8aa6" }
+permissions_x = { fg = "#626E85" }
 permissions_s = { fg = "#b5b3a5" }
 
 [input]
 border   = { fg = "#4c4c57" }
 title    = { fg = "#b5b3a5" }
 value    = {}
-selected = { fg = "#A1A1AC", bg = "#242424" }
+selected = { fg = "#A2A2AD", bg = "#282828" }
 
 [confirm]
 border   = { fg = "#4c4c57" }
 title = { fg = "#b5b3a5" }
-btn_yes = { fg = "#DA7F7C", bg = "#191919" }
-btn_no = { fg = "#69896F", bg = "#191919" }
+btn_yes = { fg = "#DC827B", bg = "#1D1D1D" }
+btn_no = { fg = "#69896F", bg = "#1D1D1D" }
 
 [tasks]
 border  = { fg = "#4c4c57" }
@@ -71,8 +71,8 @@ title    = { fg = "#b5b3a5" }
 hovered = { underline = true }
 
 [which]
-mask            = { bg = "#191919" }
-cand            = { fg = "#ab836c" }
+mask            = { bg = "#1D1D1D" }
+cand            = { fg = "#b39066" }
 rest            = { fg = "#6d748c" }
 desc            = { fg = "#817882" }
 separator       = "  "
@@ -82,19 +82,19 @@ separator_style = { fg = "#575D70"}
 border = { fg = "#4c4c57" }
 title = { fg = "#b5b3a5" }
 tbl_col = { fg = "#817882" }
-tbl_cell = { fg = "#6d748c", bg = "#191919" }
+tbl_cell = { fg = "#6d748c", bg = "#1D1D1D" }
 
 [help]
-on      = { fg = "#ab836c" }
+on      = { fg = "#b39066" }
 run    = { fg = "#817882" }
 desc    = { fg = "#4c4c57" }
-hovered = { bg = "#191919", bold = true }
-footer  = { fg = "#858599", bg = "#191919" }
+hovered = { bg = "#1D1D1D", bold = true }
+footer  = { fg = "#7a8aa6", bg = "#1D1D1D" }
 
 [notify]
 title_info = { fg = "#b5b3a5" }
 title_warn = { fg = "#AF9974" }
-title_error = { fg = "#DA7F7C" }
+title_error = { fg = "#DC827B" }
 
 [filetype]
 rules = [
@@ -107,7 +107,7 @@ rules = [
     { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#575D70"},
 
     # Fallback
-    { url = "*", fg = "#A1A1AC"},
-    { url = "*/", fg = "#6A6A7A"}
+    { url = "*", fg = "#A2A2AD"},
+    { url = "*/", fg = "#626E85"}
 ]
   

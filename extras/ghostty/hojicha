@@ -4,20 +4,20 @@
 # author: Casey Miller
 
 palette = 0=#1F1E1C
-palette = 1=#6E665E
+palette = 1=#7E4D46
 palette = 2=#5A6458
 palette = 3=#8D8468
 palette = 4=#666C78
 palette = 5=#6E6C7D
-palette = 6=#896956
+palette = 6=#6E665E
 palette = 7=#68605F
-palette = 8=#68605F
-palette = 9=#8a7f76
+palette = 8=#4f4c4c
+palette = 9=#9e6057
 palette = 10=#717d6e
 palette = 11=#b0a582
 palette = 12=#808796
 palette = 13=#8a879c
-palette = 14=#ab836c
+palette = 14=#8a7f76
 palette = 15=#AEA09F
 background = #171614
 foreground = #AEA09F
