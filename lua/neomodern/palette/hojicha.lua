@@ -3,32 +3,53 @@ local Util = require("neomodern.util")
 local M = {}
 local fg_bias = "#ffeaea"
 
----@type neomodern.PrePalette.Base
-M.base = {
+local core = {
 	black = "#171614",
 	red = "#9e6057",
 	green = "#717d6e",
+	orange = "#ab836c",
 	yellow = "#b0a582",
 	blue = "#808796",
 	magenta = "#8a879c",
 	cyan = "#8a7f76",
+	gray = "#4f4c4c",
+}
+
+---@type neomodern.PrePalette.Base
+M.base = {
+	black = core.black,
+	red = Util.darken(core.red, 0.2),
+	green = Util.darken(core.green, 0.2),
+	yellow = core.orange,
+	blue = Util.darken(core.blue, 0.2),
+	magenta = Util.darken(core.magenta, 0.2),
+	cyan = Util.darken(core.cyan, 0.2),
+	white = core.gray,
+	bright_black = Util.lighten(core.black, 0.035),
+	bright_red = core.red,
+	bright_green = core.green,
+	bright_yellow = core.yellow,
+	bright_blue = core.blue,
+	bright_magenta = core.magenta,
+	bright_cyan = core.cyan,
+	bright_white = Util.blend(core.black, 0.35, fg_bias),
 }
 
 ---@type neomodern.PrePalette.Spec
 M.spec = {
-	alt = M.base.green,
+	alt = M.base.bright_green,
 	bg = M.base.black,
-	comment = "#4f4c4c",
-	constant = M.base.red,
-	fg = Util.blend(M.base.black, 0.35, fg_bias),
-	func = Util.darken(M.base.cyan, 0.2),
-	keyword = M.base.cyan,
-	line = Util.lighten(M.base.black, 0.035),
-	number = "#ab836c",
-	operator = Util.darken(M.base.green, 0.2),
-	property = M.base.blue,
-	string = M.base.yellow,
-	type = M.base.magenta,
+	comment = M.base.white,
+	constant = M.base.bright_red,
+	fg = M.base.bright_white,
+	func = M.base.cyan,
+	keyword = M.base.bright_cyan,
+	line = M.base.bright_black,
+	number = M.base.yellow,
+	operator = M.base.green,
+	property = M.base.bright_blue,
+	string = M.base.bright_yellow,
+	type = M.base.bright_magenta,
 	visual = Util.lighten(M.base.black, 0.08),
 }
 
