@@ -5,7 +5,7 @@ local fg_bias = "#e9e9ff"
 
 local core = {
 	black = "#171719",
-	red = "#ed9fd0",
+	red = "#eba9d2",
 	green = "#90aba0",
 	yellow = "#cfa18c",
 	blue = "#87a1e6",
