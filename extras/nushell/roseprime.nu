@@ -8,24 +8,24 @@
 #       source ~/.config/nushell/themes/roseprime.nu
 
 let theme = {
-alt: "#9FB6D0",
+alt: "#A3BDD9",
 bg: "#141517",
-comment: "#666068",
+comment: "#6e6a86",
 constant: "#96aff2",
-fg: "#C4B6C5",
-func: "#c4959c",
-keyword: "#5f86b0",
+fg: "#e0def4",
+func: "#b197d1",
+keyword: "#6591bf",
 line: "#1C1D1F",
-number: "#A18877",
-operator: "#9594D4",
-property: "#9D777D",
+number: "#ebbcba",
+operator: "#8E79A7",
+property: "#c2748b",
 string: "#c9aa95",
 type: "#9bbdb8",
 visual: "#27282A",
-diag_red: "#DF8386",
+diag_red: "#DF7C82",
 diag_blue: "#89A5F0",
-diag_yellow: "#B39871",
-diag_green: "#70967C",
+diag_yellow: "#B99B78",
+diag_green: "#6A8E75",
 }
 
 $env.config.color_config = {
@@ -64,7 +64,7 @@ shape_externalarg: $theme.alt
 shape_filepath: $theme.type
 shape_flag: { fg: $theme.alt attr: b }
 shape_float: $theme.number
-shape_garbage: { fg: $theme.fg bg: "#DF8386" attr: b }
+shape_garbage: { fg: $theme.fg bg: "#DF7C82" attr: b }
 shape_globpattern: { fg: $theme.type attr: b }
 shape_int: $theme.number
 shape_internalcall: $theme.func

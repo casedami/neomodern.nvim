@@ -10,7 +10,7 @@ find_keyword  = { fg = "#748fa6", italic = true }
 find_position = { fg = "#748fa6", bg = "reset", italic = true }
 
 marker_copied   = { fg = "#d6a9b3", bg = "#d6a9b3" }
-marker_cut      = { fg = "#E3878A", bg = "#E3878A", crossed = true }
+marker_cut      = { fg = "#DA8083", bg = "#DA8083", crossed = true }
 marker_marked   = { bg = "#94A991", blink = true }
 marker_selected = { bg = "#94A991", blink = true }
 
@@ -18,7 +18,7 @@ tab_active   = { fg = "#868db5", bg = "#232425", bold = true, reversed = true }
 tab_inactive = { fg = "#6B6B67", bg = "#232425" }
 tab_width    = 1
 
-count_cut      = { fg = "#E3878A" }
+count_cut      = { fg = "#DA8083" }
 count_copied   = { fg = "#d6a9b3" }
 count_selected = { fg = "#94A991", italic = true, blink = true }
 
@@ -45,7 +45,7 @@ sep_right = { open = "", close = "" }
 
 progress_label  = { fg = "#868db5", bg = "#2D2E2F" }
 progress_normal = { fg = "#868db5", bg = "#2D2E2F" }
-progress_error  = { fg = "#E3878A", bg = "#2D2E2F" }
+progress_error  = { fg = "#DA8083", bg = "#2D2E2F" }
 
 permissions_t = { fg = "#AFBFAC" }
 permissions_r = { fg = "#748fa6" }
@@ -62,8 +62,8 @@ selected = { fg = "#AFB0A6", bg = "#2D2E2F" }
 [confirm]
 border   = { fg = "#6B6B67" }
 title = { fg = "#868db5" }
-btn_yes = { fg = "#E3878A", bg = "#232425" }
-btn_no = { fg = "#698E6F", bg = "#232425" }
+btn_yes = { fg = "#DA8083", bg = "#232425" }
+btn_no = { fg = "#64886A", bg = "#232425" }
 
 [tasks]
 border  = { fg = "#6B6B67" }
@@ -71,7 +71,7 @@ title    = { fg = "#868db5" }
 hovered = { underline = true }
 
 [which]
-mask            = { bg = "#232425" }
+mask            = { bg = "#1b1c1d" }
 cand            = { fg = "#d6a9b3" }
 rest            = { fg = "#AFBFAC" }
 desc            = { fg = "#748fa6" }
@@ -93,8 +93,8 @@ footer  = { fg = "#799475", bg = "#232425" }
 
 [notify]
 title_info = { fg = "#868db5" }
-title_warn = { fg = "#AC9569" }
-title_error = { fg = "#E3878A" }
+title_warn = { fg = "#AE926C" }
+title_error = { fg = "#DA8083" }
 
 [filetype]
 rules = [
@@ -108,6 +108,6 @@ rules = [
 
     # Fallback
     { url = "*", fg = "#AFB0A6"},
-    { url = "*/", fg = "#5D7285"}
+    { url = "*/", fg = "#748fa6"}
 ]
   

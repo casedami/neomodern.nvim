@@ -3,21 +3,21 @@
 # upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
 # author: Casey Miller
 
-palette = 0=#232425
+palette = 0=#1b1c1d
 palette = 1=#AB878F
 palette = 2=#61765E
-palette = 3=#857E59
-palette = 4=#5D7285
-palette = 5=#6B7191
-palette = 6=#8D7064
-palette = 7=#696A64
-palette = 8=#6B6B67
+palette = 3=#b08c7d
+palette = 4=#748fa6
+palette = 5=#868db5
+palette = 6=#94A991
+palette = 7=#6B6B67
+palette = 8=#232425
 palette = 9=#d6a9b3
 palette = 10=#799475
 palette = 11=#a69e6f
-palette = 12=#748fa6
-palette = 13=#868db5
-palette = 14=#b08c7d
+palette = 12=#90A5B8
+palette = 13=#9EA4C4
+palette = 14=#AFBFAC
 palette = 15=#AFB0A6
 background = #1b1c1d
 foreground = #AFB0A6

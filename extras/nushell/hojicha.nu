@@ -22,10 +22,10 @@ property: "#808796",
 string: "#b0a582",
 type: "#8a879c",
 visual: "#2A2927",
-diag_red: "#D87878",
-diag_blue: "#859DDE",
-diag_yellow: "#AE976D",
-diag_green: "#67896D",
+diag_red: "#D17474",
+diag_blue: "#8098D8",
+diag_yellow: "#AD9069",
+diag_green: "#638469",
 }
 
 $env.config.color_config = {
@@ -64,7 +64,7 @@ shape_externalarg: $theme.alt
 shape_filepath: $theme.type
 shape_flag: { fg: $theme.alt attr: b }
 shape_float: $theme.number
-shape_garbage: { fg: $theme.fg bg: "#D87878" attr: b }
+shape_garbage: { fg: $theme.fg bg: "#D17474" attr: b }
 shape_globpattern: { fg: $theme.type attr: b }
 shape_int: $theme.number
 shape_internalcall: $theme.func

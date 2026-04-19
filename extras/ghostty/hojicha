@@ -3,15 +3,15 @@
 # upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/
 # author: Casey Miller
 
-palette = 0=#1F1E1C
+palette = 0=#171614
 palette = 1=#7E4D46
 palette = 2=#5A6458
-palette = 3=#8D8468
+palette = 3=#ab836c
 palette = 4=#666C78
 palette = 5=#6E6C7D
 palette = 6=#6E665E
-palette = 7=#68605F
-palette = 8=#4f4c4c
+palette = 7=#4f4c4c
+palette = 8=#1F1E1C
 palette = 9=#9e6057
 palette = 10=#717d6e
 palette = 11=#b0a582

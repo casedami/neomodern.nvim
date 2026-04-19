@@ -10,7 +10,7 @@ find_keyword  = { fg = "#808796", italic = true }
 find_position = { fg = "#808796", bg = "reset", italic = true }
 
 marker_copied   = { fg = "#ab836c", bg = "#ab836c" }
-marker_cut      = { fg = "#D87878", bg = "#D87878", crossed = true }
+marker_cut      = { fg = "#D17474", bg = "#D17474", crossed = true }
 marker_marked   = { bg = "#717d6e", blink = true }
 marker_selected = { bg = "#717d6e", blink = true }
 
@@ -18,7 +18,7 @@ tab_active   = { fg = "#9e6057", bg = "#1F1E1C", bold = true, reversed = true }
 tab_inactive = { fg = "#4f4c4c", bg = "#1F1E1C" }
 tab_width    = 1
 
-count_cut      = { fg = "#D87878" }
+count_cut      = { fg = "#D17474" }
 count_copied   = { fg = "#ab836c" }
 count_selected = { fg = "#717d6e", italic = true, blink = true }
 
@@ -45,7 +45,7 @@ sep_right = { open = "", close = "" }
 
 progress_label  = { fg = "#9e6057", bg = "#2A2927" }
 progress_normal = { fg = "#9e6057", bg = "#2A2927" }
-progress_error  = { fg = "#D87878", bg = "#2A2927" }
+progress_error  = { fg = "#D17474", bg = "#2A2927" }
 
 permissions_t = { fg = "#8a879c" }
 permissions_r = { fg = "#808796" }
@@ -62,8 +62,8 @@ selected = { fg = "#AEA09F", bg = "#2A2927" }
 [confirm]
 border   = { fg = "#4f4c4c" }
 title = { fg = "#9e6057" }
-btn_yes = { fg = "#D87878", bg = "#1F1E1C" }
-btn_no = { fg = "#67896D", bg = "#1F1E1C" }
+btn_yes = { fg = "#D17474", bg = "#1F1E1C" }
+btn_no = { fg = "#638469", bg = "#1F1E1C" }
 
 [tasks]
 border  = { fg = "#4f4c4c" }
@@ -71,7 +71,7 @@ title    = { fg = "#9e6057" }
 hovered = { underline = true }
 
 [which]
-mask            = { bg = "#1F1E1C" }
+mask            = { bg = "#171614" }
 cand            = { fg = "#ab836c" }
 rest            = { fg = "#8a879c" }
 desc            = { fg = "#808796" }
@@ -93,8 +93,8 @@ footer  = { fg = "#8a7f76", bg = "#1F1E1C" }
 
 [notify]
 title_info = { fg = "#9e6057" }
-title_warn = { fg = "#AE976D" }
-title_error = { fg = "#D87878" }
+title_warn = { fg = "#AD9069" }
+title_error = { fg = "#D17474" }
 
 [filetype]
 rules = [

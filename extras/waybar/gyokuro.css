@@ -27,7 +27,7 @@ color: @func
 @define-color string #a69e6f;
 @define-color type #AFBFAC;
 @define-color visual #2D2E2F;
-@define-color diag_red #E3878A;
+@define-color diag_red #DA8083;
 @define-color diag_blue #829FE1;
-@define-color diag_yellow #AC9569;
-@define-color diag_green #698E6F;
+@define-color diag_yellow #AE926C;
+@define-color diag_green #64886A;

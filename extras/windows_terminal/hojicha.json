@@ -2,15 +2,15 @@
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
     "background": "#171614",
-    "black": "#1F1E1C",
+    "black": "#171614",
     "red": "#7E4D46",
     "green": "#5A6458",
-    "yellow": "#8D8468"
+    "yellow": "#ab836c"
     "blue": "#666C78",
     "purple": "#6E6C7D",
     "cyan": "#6E665E",
-    "white": "#68605F",
-    "brightBlack": "#4f4c4c",
+    "white": "#4f4c4c",
+    "brightBlack": "#1F1E1C",
     "brightRed": "#9e6057",
     "brightGreen": "#717d6e",
     "brightYellow": "#b0a582",
@@ -19,7 +19,7 @@
     "brightCyan": "#8a7f76",
     "brightWhite": "#AEA09F",
 
-    "foreground": "#68605F",
+    "foreground": "#4f4c4c",
     "selectionBackground": "#2A2927",
     "cursorColor": "#AEA09F",
 

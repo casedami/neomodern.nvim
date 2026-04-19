@@ -12,20 +12,20 @@ alt: "#ABBDEE",
 bg: "#171719",
 comment: "#61616A",
 constant: "#6a969c",
-fg: "#A0A0AF",
+fg: "#e5e5ff",
 func: "#87a1e6",
 keyword: "#8a88d1",
 line: "#1F1F21",
 number: "#cfa18c",
 operator: "#6E6DA7",
-property: "#cf9dbd",
+property: "#eba9d2",
 string: "#90aba0",
 type: "#B9B8E3",
 visual: "#2A2A2B",
-diag_red: "#E1848C",
+diag_red: "#DE8088",
 diag_blue: "#86A3EE",
 diag_yellow: "#B4966F",
-diag_green: "#6E9277",
+diag_green: "#688B71",
 }
 
 $env.config.color_config = {
@@ -64,7 +64,7 @@ shape_externalarg: $theme.alt
 shape_filepath: $theme.type
 shape_flag: { fg: $theme.alt attr: b }
 shape_float: $theme.number
-shape_garbage: { fg: $theme.fg bg: "#E1848C" attr: b }
+shape_garbage: { fg: $theme.fg bg: "#DE8088" attr: b }
 shape_globpattern: { fg: $theme.type attr: b }
 shape_int: $theme.number
 shape_internalcall: $theme.func

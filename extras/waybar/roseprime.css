@@ -13,21 +13,21 @@ color: @func
 }
 */
 
-@define-color alt #9FB6D0;
+@define-color alt #A3BDD9;
 @define-color bg #141517;
-@define-color comment #666068;
+@define-color comment #6e6a86;
 @define-color constant #96aff2;
-@define-color fg #C4B6C5;
-@define-color func #c4959c;
-@define-color keyword #5f86b0;
+@define-color fg #e0def4;
+@define-color func #b197d1;
+@define-color keyword #6591bf;
 @define-color line #1C1D1F;
-@define-color number #A18877;
-@define-color operator #9594D4;
-@define-color property #9D777D;
+@define-color number #ebbcba;
+@define-color operator #8E79A7;
+@define-color property #c2748b;
 @define-color string #c9aa95;
 @define-color type #9bbdb8;
 @define-color visual #27282A;
-@define-color diag_red #DF8386;
+@define-color diag_red #DF7C82;
 @define-color diag_blue #89A5F0;
-@define-color diag_yellow #B39871;
-@define-color diag_green #70967C;
+@define-color diag_yellow #B99B78;
+@define-color diag_green #6A8E75;

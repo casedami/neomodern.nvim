@@ -2,26 +2,26 @@
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
     "background": "#171719",
-    "black": "#1F1F21",
-    "red": "#A67E97",
+    "black": "#171719",
+    "red": "#BC87A8",
     "green": "#738980",
-    "yellow": "#A68170"
-    "blue": "#6C81B8",
-    "purple": "#6E6DA7",
-    "cyan": "#55787D",
-    "white": "#606069",
-    "brightBlack": "#61616A",
-    "brightRed": "#cf9dbd",
+    "yellow": "#cfa18c"
+    "blue": "#87a1e6",
+    "purple": "#8a88d1",
+    "cyan": "#6a969c",
+    "white": "#61616A",
+    "brightBlack": "#1F1F21",
+    "brightRed": "#eba9d2",
     "brightGreen": "#90aba0",
-    "brightYellow": "#cfa18c",
-    "brightBlue": "#87a1e6",
-    "brightPurple": "#8a88d1",
-    "brightCyan": "#6a969c",
-    "brightWhite": "#A0A0AF",
+    "brightYellow": "#D9B4A3",
+    "brightBlue": "#ABBDEE",
+    "brightPurple": "#B9B8E3",
+    "brightCyan": "#88ABB0",
+    "brightWhite": "#e5e5ff",
 
-    "foreground": "#606069",
+    "foreground": "#61616A",
     "selectionBackground": "#2A2A2B",
-    "cursorColor": "#A0A0AF",
+    "cursorColor": "#e5e5ff",
 
     "name": "#iceclimber",
 }

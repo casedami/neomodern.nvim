@@ -14,18 +14,18 @@ foreground = '#AEA09F'
 
 # Normal colors
 [colors.normal]
-black = '#1F1E1C'
+black = '#171614'
 red = '#7E4D46'
 green = '#5A6458'
-yellow = '#8D8468'
+yellow = '#ab836c'
 blue = '#666C78'
 magenta = '#6E6C7D'
 cyan = '#6E665E'
-white = '#68605F'
+white = '#4f4c4c'
 
 # Bright colors
 [colors.bright]
-black = '#4f4c4c'
+black = '#1F1E1C'
 red = '#9e6057'
 green = '#717d6e'
 yellow = '#b0a582'

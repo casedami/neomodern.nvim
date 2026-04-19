@@ -28,7 +28,7 @@ set -g fish_color_keyword 799475
 set -g fish_color_quote a69e6f
 set -g fish_color_redirection 868db5
 set -g fish_color_end b08c7d
-set -g fish_color_error E3878A
+set -g fish_color_error DA8083
 set -g fish_color_param AFB0A6
 set -g fish_color_valid_path AFBFAC
 set -g fish_color_option 94A991
@@ -39,7 +39,7 @@ set -g fish_color_escape 799475
 set -g fish_color_autosuggestion 6B6B67
 set -g fish_color_cwd a69e6f
 set -g fish_color_hostname d6a9b3
-set -g fish_color_status E3878A
+set -g fish_color_status DA8083
 set -g fish_color_cancel d6a9b3
 set -g fish_color_search_match --background=232425
 

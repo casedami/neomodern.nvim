@@ -2,26 +2,26 @@
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
     "background": "#141517",
-    "black": "#1C1D1F",
-    "red": "#9D777D",
+    "black": "#141517",
+    "red": "#c2748b",
     "green": "#7C9793",
-    "yellow": "#A18877"
-    "blue": "#788CC2",
-    "purple": "#8583BC",
-    "cyan": "#4C6B8D",
-    "white": "#766D76",
-    "brightBlack": "#666068",
-    "brightRed": "#c4959c",
+    "yellow": "#ebbcba"
+    "blue": "#96aff2",
+    "purple": "#8E79A7",
+    "cyan": "#6591bf",
+    "white": "#6e6a86",
+    "brightBlack": "#1C1D1F",
+    "brightRed": "#CE90A2",
     "brightGreen": "#9bbdb8",
     "brightYellow": "#c9aa95",
-    "brightBlue": "#96aff2",
-    "brightPurple": "#a6a4eb",
-    "brightCyan": "#5f86b0",
-    "brightWhite": "#C4B6C5",
+    "brightBlue": "#8E79A7",
+    "brightPurple": "#b197d1",
+    "brightCyan": "#A3BDD9",
+    "brightWhite": "#e0def4",
 
-    "foreground": "#766D76",
+    "foreground": "#6e6a86",
     "selectionBackground": "#27282A",
-    "cursorColor": "#C4B6C5",
+    "cursorColor": "#e0def4",
 
     "name": "#roseprime",
 }

@@ -1,4 +1,4 @@
---color=fg:#666068,bg:#141517,hl:#9bbdb8,gutter:#141517
---color=fg+:#9FB6D0,bg+:#1C1D1F,hl+:#9bbdb8
---color=info:#96aff2,prompt:#c4959c,pointer:#9D777D
---color=marker:#5f86b0,spinner:#5f86b0,header:#5f86b0
+--color=fg:#6e6a86,bg:#141517,hl:#9bbdb8,gutter:#141517
+--color=fg+:#A3BDD9,bg+:#1C1D1F,hl+:#9bbdb8
+--color=info:#96aff2,prompt:#b197d1,pointer:#c2748b
+--color=marker:#6591bf,spinner:#6591bf,header:#6591bf
