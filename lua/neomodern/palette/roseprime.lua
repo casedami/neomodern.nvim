@@ -4,12 +4,12 @@ local M = {}
 
 local core = {
 	black = "#141517",
-	red = "#d9829b",
+	red = "#c2748b",
 	green = "#9bbdb8",
 	orange = "#ebbcba",
 	yellow = "#c9aa95",
 	blue = "#96aff2",
-	magenta = "#c4a7e7",
+	magenta = "#b197d1",
 	cyan = "#6591bf",
 	white = "#e0def4",
 	gray = "#6e6a86",
