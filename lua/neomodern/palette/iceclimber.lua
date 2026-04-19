@@ -23,7 +23,7 @@ M.base16 = {
 	blue = core.blue,
 	magenta = core.magenta,
 	cyan = core.cyan,
-	white = Util.blend(M.base.black, 0.65, fg_bias),
+	white = Util.blend(M.base16.black, 0.65, fg_bias),
 	bright_black = Util.lighten(core.black, 0.035),
 	bright_red = core.red,
 	bright_green = core.green,
@@ -36,19 +36,19 @@ M.base16 = {
 
 ---@type neomodern.PalettePreSpec
 M.spec = {
-	alt = M.base.bright_blue,
-	bg = M.base.black,
-	comment = M.base.white,
-	constant = M.base.cyan,
-	fg = M.base.bright_white,
-	func = M.base.blue,
-	keyword = M.base.magenta,
-	line = M.base.bright_black,
-	number = M.base.yellow,
-	operator = Util.darken(M.base.magenta, 0.2),
-	property = M.base.bright_red,
-	string = M.base.bright_green,
-	type = M.base.bright_magenta,
+	alt = M.base16.bright_blue,
+	bg = M.base16.black,
+	comment = M.base16.white,
+	constant = M.base16.cyan,
+	fg = M.base16.bright_white,
+	func = M.base16.blue,
+	keyword = M.base16.magenta,
+	line = M.base16.bright_black,
+	number = M.base16.yellow,
+	operator = Util.darken(M.base16.magenta, 0.2),
+	property = M.base16.bright_red,
+	string = M.base16.bright_green,
+	type = M.base16.bright_magenta,
 }
 
 return M

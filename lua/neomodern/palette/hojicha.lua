@@ -37,19 +37,19 @@ M.base16 = {
 
 ---@type neomodern.PalettePreSpec
 M.spec = {
-	alt = M.base.bright_green,
-	bg = M.base.black,
-	comment = M.base.white,
-	constant = M.base.bright_red,
-	fg = M.base.bright_white,
-	func = M.base.cyan,
-	keyword = M.base.bright_cyan,
-	line = M.base.bright_black,
-	number = M.base.yellow,
-	operator = M.base.green,
-	property = M.base.bright_blue,
-	string = M.base.bright_yellow,
-	type = M.base.bright_magenta,
+	alt = M.base16.bright_green,
+	bg = M.base16.black,
+	comment = M.base16.white,
+	constant = M.base16.bright_red,
+	fg = M.base16.bright_white,
+	func = M.base16.cyan,
+	keyword = M.base16.bright_cyan,
+	line = M.base16.bright_black,
+	number = M.base16.yellow,
+	operator = M.base16.green,
+	property = M.base16.bright_blue,
+	string = M.base16.bright_yellow,
+	type = M.base16.bright_magenta,
 }
 
 return M

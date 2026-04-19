@@ -9,6 +9,7 @@ local Util = require("neomodern.util")
 ---@field blue string
 ---@field magenta string
 ---@field cyan string
+---@field white string
 ---@field bright_black string
 ---@field bright_red string
 ---@field bright_green string
@@ -16,6 +17,7 @@ local Util = require("neomodern.util")
 ---@field bright_blue string
 ---@field bright_magenta string
 ---@field bright_cyan string
+---@field bright_white string
 
 ---@class neomodern.PalettePreSpec
 ---@field alt string highlight
