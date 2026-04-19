@@ -1,7 +1,6 @@
 local Util = require("neomodern.util")
 
 local M = {}
-local fg_bias = "#eeeeff"
 
 local core = {
 	black = "#151515",
@@ -18,8 +17,8 @@ local core = {
 	white2 = "#f0f2f5",
 }
 
----@type neomodern.PrePalette.Base
-M.base = {
+---@type neomodern.PaletteBase16
+M.base16 = {
 	black = "#151515",
 	red = Util.darken(core.red, 0.2),
 	green = Util.darken(core.green, 0.2),
@@ -38,7 +37,7 @@ M.base = {
 	bright_white = core.white,
 }
 
----@type neomodern.PrePalette.Spec
+---@type neomodern.PalettePreSpec
 M.spec = {
 	alt = M.base.bright_magenta,
 	bg = M.base.black,
@@ -53,7 +52,6 @@ M.spec = {
 	property = core.gray3,
 	string = M.base.bright_green,
 	type = M.base.bright_blue,
-	visual = Util.lighten(M.base.black, 0.08),
 }
 
 return M

@@ -13,8 +13,8 @@ local core = {
 	orange = "#b08c7d",
 }
 
----@type neomodern.PrePalette.Base
-M.base = {
+---@type neomodern.PaletteBase16
+M.base16 = {
 	black = "#1b1c1d",
 	red = Util.darken(core.red, 0.2),
 	green = Util.darken(core.green, 0.2),
@@ -33,7 +33,7 @@ M.base = {
 	bright_white = Util.blend(core.black, 0.35, fg_bias),
 }
 
----@type neomodern.PrePalette.Spec
+---@type neomodern.PalettePreSpec
 M.spec = {
 	alt = M.base.cyan,
 	bg = M.base.black,
@@ -48,7 +48,6 @@ M.spec = {
 	property = M.base.blue,
 	string = M.base.bright_yellow,
 	type = M.base.bright_cyan,
-	visual = Util.lighten(M.base.black, 0.08),
 }
 
 return M

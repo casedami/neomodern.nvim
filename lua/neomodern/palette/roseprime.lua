@@ -15,8 +15,8 @@ local core = {
 	gray = "#6e6a86",
 }
 
----@type neomodern.PrePalette.Base
-M.base = {
+---@type neomodern.PaletteBase16
+M.base16 = {
 	black = core.black,
 	red = core.red,
 	green = Util.darken(core.green, 0.2),
@@ -35,7 +35,7 @@ M.base = {
 	bright_white = core.white,
 }
 
----@type neomodern.PrePalette.Spec
+---@type neomodern.PalettePreSpec
 M.spec = {
 	alt = M.base.bright_cyan,
 	bg = M.base.black,
