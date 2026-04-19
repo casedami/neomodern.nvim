@@ -10,11 +10,11 @@ local core = {
 	blue = "#6e86c2",
 	magenta = "#665566",
 	cyan = "#7a8aa6",
-	cyan2 = "#DEEEED",
+	cyan2 = "#c7d9d8",
 	gray1 = "#aeb1b5",
 	gray2 = "#75757d",
 	gray3 = "#555555",
-	white = "#E1E1E1",
+	white = "#e1e1e1",
 	white2 = "#f0f2f5",
 }
 
