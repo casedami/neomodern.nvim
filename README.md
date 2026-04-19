@@ -22,24 +22,6 @@ modern — simple — unintrusive
 
 ## Gallery
 
-### 🌚 MOON
-
-A dark, spacy theme inspired by the colors of the moon
-
-<details open>
-<summary>Dark Variant</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/moon-dark.png)
-
-</details>
-
-<details closed>
-<summary>Light Variant</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/moon-light.png)
-
-</details>
-
 ### ❄️ *ICECLIMBER*
 
 A theme with colors inspired from Nintendo's Ice Climbers characters
@@ -134,7 +116,7 @@ require("neomodern").load("iceclimber")
 
 ## Configuration
 
-There are 5 themes included, each with a light and dark variant.
+There are 4 themes included, each with a light and dark variant.
 The light theme is used when `vim.o.background = "light"`.
 
 Default options are given below:
@@ -146,7 +128,7 @@ require("neomodern").setup({
   -- 'transparent' background is not set
   bg = "default",
 
-  theme = "moon", -- 'moon' | 'iceclimber' | 'gyokuro' | 'hojicha' | 'roseprime'
+  theme = "iceclimber", -- 'iceclimber' | 'gyokuro' | 'hojicha' | 'roseprime'
 
   gutter = {
     cursorline = false, -- highlight the cursorline in the gutter

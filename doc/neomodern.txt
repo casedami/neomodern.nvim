@@ -50,8 +50,7 @@ neomodern.Background
 
 neomodern.Theme
 
-    "moon"
-    | "iceclimber"
+    "iceclimber"
     | "gyokuro"
     | "hojicha"
     | "roseprime"
