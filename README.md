@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=casedami&project=neomodern.nvim&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 # <p align="center"> *NEOMODERN*.nvim </p>
 
 <p align="center">
